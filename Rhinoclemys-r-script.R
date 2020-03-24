@@ -11,237 +11,326 @@ rm(list=ls())
 setwd("/Users/Brian/Dropbox/La Selva Turtles/Rhinoclemmys funerea project/GitHub")
 
 # Load the table
-datum <- read.csv("captures.csv", header = TRUE)
+datum = read.csv("captures.csv", header = TRUE)
 head(datum)
+str(datum)
+
+# Remove Chelydra acutirostris from dataset
+datum = droplevels(subset(datum, datum$Species == "Rhinoclemmys funerea"))
+str(datum)
+
+###### Part I --
+###### Summarize the capture-mark recapture data
+###### and build mark-recapture histories for the study site
+studyarea = droplevels(subset(datum, datum$Survey == "Yes"))
+
+# Number of captures in study area
+(caps = length(studyarea[,1]))
+
+# Number of individuals captured in study area
+(inds = length(summary(as.factor(studyarea$Number))))
+
+# Number of individuals recaptured in study area
+recaptured = summary(as.factor(studyarea$Number)) > 1
+(recaptured = length(recaptured[recaptured==TRUE]))
+
+# Percentage of animals recaptured (recapture rate)
+(recapRate = recaptured/inds)
+
+# Mean number of captures per individual
+(mrecaps = mean(table(studyarea$Number)))
+
+# Range of captures per individuals
+range(summary(as.factor(studyarea$Number)))
+
+
+## Create mark-recapture histories for individuals in the study area
+
+# Set up a matrix to save capture histories
+inds = sort(as.numeric(as.character(levels(factor(studyarea$Number)))))
+surveys = sort(as.numeric(as.character(levels(factor(studyarea$Julian)))))
+  # This does miss out on one survey, the last one, 
+  # because no individuals were capture
+ch = matrix(NA, length(inds), length(surveys))
+rownames(ch) = inds
+colnames(ch) = surveys
+
+# Mark-recapture histories will be saved state-specific,
+# where individuals observed each survey are specified as:
+# juveniles = 1, females = 2, males = 3
+for (j in 1:length(inds)){
+  ind = subset(studyarea, studyarea$Number == inds[j])
+  for (k in 1:length(surveys)){
+    survey = subset(ind, ind$Julian == surveys[k])
+    # Specify J = 1, F = 2, M = 3, or NA for unsampled years
+    if(surveys[k] %in% levels(as.factor(studyarea$Julian)) == FALSE) {
+      ch[j,k] = NA} else {
+        if(length(survey$Julian) > 0 && survey$AgeSex[1] == "J") {
+          ch[j,k] = 1} else {
+            if(length(survey$Julian) > 0 && survey$AgeSex[1] == "F") {
+              ch[j,k] = 2} else {
+                if(length(survey$Julian) > 0 && survey$AgeSex[1] == "M") {
+                  ch[j,k] = 3} else {ch[j,k] = 0}}}}
+  }
+}
+
+ch # Capture histories by age-sex state!
+
+
+
+
+
+
+###### Part II -- 
+###### Morphometric analysis
+###### Perform a series of morphometric analyses to explore 
+###### morphological variation between the sexes
 
 # Log transform length and mass measurements
 logCL <- log(datum$CL)
 logPL <- log(datum$PL)
 logMass <- log(datum$Mass)
-TailRatio <- datum$Plastron_to_vent/datum$Tail_length
+TailRatio <- datum$PV/datum$TL
 datum <- cbind(datum,logCL,logPL,logMass,TailRatio)
 
-
-
-#####################
-### Morphometrics ###
-#####################
+library(lawstat)
 
 morph <- subset(datum, datum$Status!="recap") #remove recaptures
 head(morph)
 morph
 
-males <- subset(morph, morph$Sex=="M")
-females <- subset(morph, morph$Sex=="F")
+males <- subset(morph, morph$Sex=="M"); females <- subset(morph, morph$Sex=="F")
 
-library(lawstat)
+##### Do males and females differ in body size?
 
-###
-### Do males and females differ in body size?
-###
+# Box-and-whiskers plots of adult males and females
+plot(morph$Sex, morph$logCL, ylab="Carapace length (cm)", xlab="Sex")
 
-#box-and-whiskers plots of adult males and females
-plot(morph[-c(15),]$Sex, morph[-c(15),]$logCL, ylab="Carapace length (cm)", xlab="Sex")
-
-#test for assumptions of parametric statistics
+# Test for assumptions of parametric statistics
 shapiro.test(males$CL)		#male carapace length is normal
 shapiro.test(females$CL)	#female carapace length is normal
-levene.test(morph[-c(15),]$CL, morph[-c(15),]$Sex)	#homoscedasticity is OK
+levene.test(morph$CL, morph$Sex)	#homoscedasticity is OK
 
-#compare CL of adult males & females with a t-test
-(results <- lm(CL ~ Sex, data=morph[-c(15),]))
-summary(results)
-confint(results)
+# Compare CL of adult males & females with a t-test
+adults = droplevels(subset(morph, morph$Sex != "J"))
+adults = droplevels(subset(adults, adults$Sex != "JF"))
+adults = droplevels(subset(adults, adults$Sex != "JM"))
+
+(res <- lm(CL ~ Sex, data=adults))
+summary(res)
+confint(res)
+  ### Adult males and females do not differe in maximum carapace length
+  ### this confirms suggestions in the literature (Savage 2002) 
 
 
-###
-### Do males and females differ in length-mass ratios?
-###
+##### Do males and females differ in length-mass ratios?
 
-# simple model of length-mass with males and females lumped
-results2 <- lm(Mass ~ CL, data=morph[-c(15),])
-summary(results2)
+# Simple model of length-mass with males and females lumped
+res1 <- lm(Mass ~ CL, data=adults)
+summary(res1)
 
-# multivariable model where males differ in size than females
-results3 <- lm(Mass ~ CL + Male, data=morph[-c(15),])
-summary(results3)
-confint(results3)
+# Multivariate model where males differ in size than females (additive effect of sex)
+res2 <- lm(Mass ~ CL + Male, data=adults)
+summary(res2)
+confint(res2)
 	# carapace-mass relationship significant, females > males significant
 
-# saturated multivariable model (with interaction term)
-results4 <- lm(Mass ~ CL*Male, data=morph[-c(15),])
-summary(results4)
+# Saturated multivariate model; additive model now includes interaction term
+res3 <- lm(Mass ~ CL*Male, data=adults)
+summary(res3)
+  ## since intereaction term was nonsignificant, we should remove it
+  ## but first, let's test to see if res3 (complicated) is better than
+  ## res2, a slightly more simple model
 
-# since intereaction term was nonsignificant, we should remove it
-# but first, let's test to see if results4 (complicated) is better than
-# results3, a slightly more simple model
-anova(results4,results3)
-	# non significant, so more complicated model is not better
+anova(res3,res2)
+	## non significant, so more complicated model is not better
 
 # thus, the best model explaining length mass is Mass ~ CL + Male
 # discuss this model in the results
+summary(res2)
+confint(res2)
+
+##### Does tail length vary between sexes?
+tailres <- lm(TL ~ CL*Male, data=adults)
+summary(tailres)
+  # Interaction not significant, so remove that term and rerun
+
+tailres2 <- lm(TL ~ CL + Male, data=adults)
+summary(tailres2)
+confint(tailres2)
+  # Males have longer tails than females, 
+  # but no interaction between length*sex
+
+###### Does plastron-vent distance vary between sexes?
+pvmod <- lm(PV ~ CL*Male, data=adults)
+summary(pvmod)
+  # Interaction not significant, so remove that term and rerun
+
+pvmod2 <- lm(PV ~ CL + Male, data=adults)
+summary(pvmod2)
+confint(pvmod2)
+  # The vent is proportionally farther down the tail in males than females
+
+###### Does CL-PL relationship vary between sexes?
+CLPLmod <- lm(PL ~ CL + Male + CL:Male, data=adults)
+summary(CLPLmod)
+  # interaction non-significant; drop and rebuild model
+
+CLPLmod2 <- lm(PL ~ CL + Male, data=adults)
+summary(CLPLmod2)
+  # all variable significant; additive effect of sex on PL-CL relationship
 
 
+###### Part II -- 
+###### Plot morphometric results for graphs in manuscript
+dev.off()
 
+## A) Length to mass
+summary(res2)
 
-###
-### Plot length-mass relationships for adult males and females
-####
-
-plot(Mass ~ CL, data=morph[-c(15),], pch=as.numeric(Sex), xlab="Carapace length (cm)",
-	ylab="Mass (g)", axes=FALSE, xlim=c(22,36), ylim=c(1500,5000),
+plot(Mass ~ CL, data=adults, pch=as.numeric(Sex), xlab="Carapace length (cm)",
+	ylab="Mass (g)", axes=FALSE, xlim=c(20,36), ylim=c(1500,5000),
 	cex.lab=1.3, type="n")
 axis(1, cex.lab=1.3, cex.axis=1.3, lwd=3)
 axis(2, cex.lab=1.3, cex.axis=1.3, lwd=3)
 
-points(Mass ~ CL, data=morph[-c(15),], pch=as.numeric(Sex),
-	lwd=2, cex=2)
+points(Mass ~ CL, data=adults, pch=as.numeric(Sex), lwd=2, cex=1.5)
 
-chicas <- lm(Mass ~ CL, data=females)
-abline(chicas)
-machos <- lm(Mass ~ CL, data=males)
-abline(machos, lty=2)
+# line for females
+lines(x=c(20,36), y=c(res2$coefficients[1]+20*res2$coefficients[2],res2$coefficients[1]+36*res2$coefficients[2]), type="l", lwd=2.5)
+# line for males
+lines(x=c(20,36), y=c(res2$coefficients[1]+20*res2$coefficients[2]+res2$coefficients[3],res2$coefficients[1]+36*res2$coefficients[2]+res2$coefficients[3]), type="l", lwd=2.5, lty=2)
 
 legend("topleft", inset=0.05, box.lwd=2,
-	c("Female","Male"), 
-	pch=c(1,3), cex=1.5, pt.lwd=2)
+	c("Female","Male"), pch=c(1,2), lty=c(1,2), cex=1.5, pt.lwd=2)
 
 
-###
-### Is sex externally distinguishable by tail length
-### and position of the cloaca?
-###
-
-### Tail length
-
-# Simple plot
-plot(Tail_length ~ CL, pch=as.numeric(Sex), data=morph[-c(15),], 
-	xlab="Carapace length (cm)", ylab="Tail length (cm)")
+### B) Tail length
+summary(tailres2)
 
 # Custom plot
-plot(Tail_length ~ CL, data=morph[-c(15),], pch=as.numeric(Sex), xlab="Carapace length (cm)",
-	ylab="Tail length (cm)", axes=FALSE, xlim=c(22,36), ylim=c(6,12),
+plot(TL ~ CL, data=adults, pch=as.numeric(Sex), xlab="Carapace length (cm)",
+	ylab="Tail length (cm)", axes=FALSE, xlim=c(20,36), ylim=c(4,12),
 	cex.lab=1.3, type="n")
 axis(1, cex.lab=1.3, cex.axis=1.3, lwd=3)
 axis(2, cex.lab=1.3, cex.axis=1.3, lwd=3)
 
-points(Tail_length ~ CL, data=morph[-c(15),], pch=as.numeric(Sex),
-	lwd=2, cex=2)
+points(TL ~ CL, data=adults, pch=as.numeric(Sex), lwd=2, cex=1.5)
 
-chicas <- lm(Tail_length ~ CL, data=females)
-abline(chicas)
-machos <- lm(Tail_length ~ CL, data=males)
-abline(machos, lty=2)
+# line for females
+lines(x=c(20,36), y=c(tailres2$coefficients[1]+20*tailres2$coefficients[2],tailres2$coefficients[1]+36*tailres2$coefficients[2]), type="l", lwd=2.5)
+# line for males
+lines(x=c(20,36), y=c(tailres2$coefficients[1]+20*tailres2$coefficients[2]+tailres2$coefficients[3],tailres2$coefficients[1]+36*tailres2$coefficients[2]+tailres2$coefficients[3]), type="l", lwd=2.5, lty=2)
 
 legend("topleft", inset=0.05, box.lwd=2,
-	c("Female","Male"), 
-	pch=c(1,3), cex=1.5, pt.lwd=2)
-text(35,11.5,"A",cex=2)
+	c("Female","Male"), pch=c(1,2), lty=c(1,2), cex=1.5, pt.lwd=2)
 
 
-# Let's do a multi-variable regression to see if males differ from females,
-# and if there is an interaction between tail length and sex
-model <- lm(Tail_length ~ CL*Male, data=datum)
-summary(model)
-
-# Interaction not significant, so remove that term and rerun
-model2 <- lm(Tail_length ~ CL + Male, data=datum)
-summary(model2)
-confint(model2)
-	# Males have longer tails than females, 
-	# but no interaction between length*sex
-
-
-### Plastron to vent 
-
-# Simple plot
-plot(Plastron_to_vent ~ CL, pch=as.numeric(Sex), data=morph[-c(15),])
+### C) Plastron to vent length
+summary(pvmod2)
 
 # Custom plot
-plot(Plastron_to_vent ~ CL, data=morph[-c(15),], pch=as.numeric(Sex), xlab="Carapace length (cm)",
-	ylab="Plastron-vent length (cm)", axes=FALSE, xlim=c(22,36), ylim=c(2,8),
+plot(PV ~ CL, data=adults, pch=as.numeric(Sex), xlab="Carapace length (cm)",
+	ylab="Plastron-vent length (cm)", axes=FALSE, xlim=c(20,36), ylim=c(2,8),
 	cex.lab=1.3, type="n")
 axis(1, cex.lab=1.3, cex.axis=1.3, lwd=3)
 axis(2, cex.lab=1.3, cex.axis=1.3, lwd=3)
 
-points(Plastron_to_vent ~ CL, data=morph[-c(15),], pch=as.numeric(Sex),
-	lwd=2, cex=2)
+points(PV ~ CL, data=adults, pch=as.numeric(Sex), lwd=2, cex=1.5)
 
-chicas <- lm(Plastron_to_vent ~ CL, data=females)
-abline(chicas)
-machos <- lm(Plastron_to_vent ~ CL, data=males)
-abline(machos, lty=2)
+# line for females
+lines(x=c(20,36), y=c(pvmod2$coefficients[1]+20*pvmod2$coefficients[2],pvmod2$coefficients[1]+36*pvmod2$coefficients[2]), type="l", lwd=2.5)
+# line for males
+lines(x=c(20,36), y=c(pvmod2$coefficients[1]+20*pvmod2$coefficients[2]+pvmod2$coefficients[3],pvmod2$coefficients[1]+36*pvmod2$coefficients[2]+pvmod2$coefficients[3]), type="l", lwd=2.5, lty=2)
 
-legend("topleft", inset=0.05, box.lwd=2,
-	c("Female","Male"), 
-	pch=c(1,3), cex=1.5, pt.lwd=2)
-text(35,7.4,"B",cex=2)
-
-# Let's do a multi-variable regression to see if males differ from females,
-# and if there is an interaction between tail length and sex
-model <- lm(Plastron_to_vent ~ CL*Male, data=morph[-c(15),])
-summary(model)
-
-# Interaction not significant, so remove that term and rerun
-model2 <- lm(Plastron_to_vent ~ CL + Male, data=morph[-c(15),])
-summary(model2)
-confint(model2)
-	# The vent is proportionally farther down the tail
-	# in males than females
+legend("topleft", inset=0.05, box.lwd=2, c("Female","Male"), 
+	pch=c(1,2), lty=c(1,2), cex=1.5, pt.lwd=2)
 
 
-### Ratio of plastron-vent/tail length
-plot(TailRatio ~ CL, data=morph[-c(15),])
+### D) CL-PL relationship
+summary(CLPLmod2)
+dev.off()
 
-plot(TailRatio ~ CL, data=morph[-c(15),], pch=as.numeric(Sex), xlab="Carapace length (cm)",
-	ylab="Plastron-vent/Tail length ratio", axes=FALSE, xlim=c(22,36), ylim=c(0.40,0.70),
-	cex.lab=1.3, type="n")
+plot(PL ~ CL, data=adults, pch=as.numeric(Sex), xlab="Carapace length (cm)",
+	ylab="Plastron length (cm)", axes=FALSE, xlim=c(22,36), 
+	ylim=c(20,30), cex.lab=1.3, type="n")
 axis(1, cex.lab=1.3, cex.axis=1.3, lwd=3)
 axis(2, cex.lab=1.3, cex.axis=1.3, lwd=3)
 
-points(TailRatio ~ CL, data=morph[-c(15),], pch=as.numeric(Sex),
-	lwd=2, cex=2)
+points(PL ~ CL, data=adults, pch=as.numeric(Sex), lwd=2, cex=1.5)
 
-chicas <- lm(TailRatio ~ CL, data=females)
-abline(chicas)
-machos <- lm(TailRatio ~ CL, data=males)
-abline(machos, lty=2)
+# line for females 
+lines(x=c(22,36), y=c(CLPLmod2$coefficients[1]+22*CLPLmod2$coefficients[2],CLPLmod2$coefficients[1]+36*CLPLmod2$coefficients[2]), type="l", lwd=2.5)
+# line for males
+lines(x=c(22,36), y=c(CLPLmod2$coefficients[1]+22*CLPLmod2$coefficients[2]+CLPLmod2$coefficients[3],CLPLmod2$coefficients[1]+36*CLPLmod2$coefficients[2]+CLPLmod2$coefficients[3]), type="l", lwd=2.5, lty=2)
 
 legend("topleft", inset=0.05, box.lwd=2,
-	c("Female","Male"), 
-	pch=c(1,3), cex=1.5, pt.lwd=2)
+	c("Female","Male"), pch=c(1,2), lty=c(1,2), cex=1.5, pt.lwd=2)
 
 
-###
-### Is sex externally distinguishable by CL-PL ratio?
-###
 
-plot(CL ~ PL, data=morph[-c(15),], pch=as.numeric(Sex), 
-	xlab="Plastron length (cm)", ylab="Carapace length (cm)")
-model <- lm(CL ~ PL + Male + PL:Male, data=morph[-c(15),])
-summary(model)
-confint(model)
-	# all variable significant -- CL, Male, and interaction
+#### Make two two-panel graph of the morphometric results
 
-
-plot(CL ~ PL, data=morph[-c(15),], pch=as.numeric(Sex), xlab="Plastron length (cm)",
-	ylab="Carapace length (cm)", axes=FALSE, xlim=c(20,30), 
-	ylim=c(22,36), cex.lab=1.3, type="n")
+## (1) A two-panel graph of CL-Mass and CL-PL relationships
+# Carapace length-mass relationsip
+par(mfrow=c(2,1), oma=c(4,4,0,0)+0.5, mar=c(0,0,1,1)+0.5, cex.lab=1.7) 
+plot(Mass ~ CL, data=adults, pch=as.numeric(Sex), xlab="Carapace length (cm)",
+     ylab="Mass (g)", axes=FALSE, xlim=c(20,36), ylim=c(1500,5000),
+     cex.lab=1.3, type="n")
 axis(1, cex.lab=1.3, cex.axis=1.3, lwd=3)
 axis(2, cex.lab=1.3, cex.axis=1.3, lwd=3)
+points(Mass ~ CL, data=adults, pch=as.numeric(Sex), lwd=2, cex=1.5)
+lines(x=c(20,36), y=c(res2$coefficients[1]+20*res2$coefficients[2],res2$coefficients[1]+36*res2$coefficients[2]), type="l", lwd=2.5)
+lines(x=c(20,36), y=c(res2$coefficients[1]+20*res2$coefficients[2]+res2$coefficients[3],res2$coefficients[1]+36*res2$coefficients[2]+res2$coefficients[3]), type="l", lwd=2.5, lty=2)
+legend(20,4500, inset=0.05, box.lwd=2,
+       c("Female","Male"), pch=c(1,2), lty=c(1,2), cex=1.5, pt.lwd=2)
+text(21,4850, "(A)", cex=2)
 
-points(CL ~ PL, data=morph[-c(15),], pch=as.numeric(Sex),
-	lwd=2, cex=2)
+# Carapace length-plastron length relationship
+plot(PL ~ CL, data=adults, pch=as.numeric(Sex), xlab="Carapace length (cm)",
+     ylab="Plastron length (cm)", axes=FALSE, xlim=c(22,36), 
+     ylim=c(20,30), cex.lab=1.3, type="n")
+axis(1, cex.lab=1.3, cex.axis=1.3, lwd=3)
+axis(2, cex.lab=1.3, cex.axis=1.3, lwd=3)
+points(PL ~ CL, data=adults, pch=as.numeric(Sex), lwd=2, cex=1.5)
+lines(x=c(22,36), y=c(CLPLmod2$coefficients[1]+22*CLPLmod2$coefficients[2],CLPLmod2$coefficients[1]+36*CLPLmod2$coefficients[2]), type="l", lwd=2.5)
+lines(x=c(22,36), y=c(CLPLmod2$coefficients[1]+22*CLPLmod2$coefficients[2]+CLPLmod2$coefficients[3],CLPLmod2$coefficients[1]+36*CLPLmod2$coefficients[2]+CLPLmod2$coefficients[3]), type="l", lwd=2.5, lty=2)
+text(22.8,29.3, "(B)", cex=2)
 
-chicas <- lm(CL ~ PL, data=females)
-abline(chicas)
-machos <- lm(CL ~ PL, data=males)
-abline(machos, lty=2)
+# Axis titles
+title(xlab = "Carapace length (cm)", outer=TRUE, line=2.4, cex.sub=1.8, cex.lab=1.8)
+title(ylab = "Plastron length (cm)                Mass (g)         ", outer=TRUE, line=2.4, cex.sub=1.6, cex.lab=1.6)
 
-legend("topleft", inset=0.05, box.lwd=2,
-	c("Female","Male"), 
-	pch=c(1,3), cex=1.5, pt.lwd=2)
 
+## (2)  A two-panel graph of CL-PV and CL-TL relationships
+# Tail length by carapace length
+par(mfrow=c(2,1), oma=c(4,4,0,0)+0.5, mar=c(0,0,1,1)+0.5, cex.lab=1.7) 
+plot(TL ~ CL, data=adults, pch=as.numeric(Sex), xlab="Carapace length (cm)",
+     ylab="Tail length (cm)", axes=FALSE, xlim=c(20,36), ylim=c(4,12),
+     cex.lab=1.3, type="n")
+axis(1, cex.lab=1.3, cex.axis=1.3, lwd=3)
+axis(2, cex.lab=1.3, cex.axis=1.3, lwd=3)
+points(TL ~ CL, data=adults, pch=as.numeric(Sex), lwd=2, cex=1.5)
+lines(x=c(20,36), y=c(tailres2$coefficients[1]+20*tailres2$coefficients[2],tailres2$coefficients[1]+36*tailres2$coefficients[2]), type="l", lwd=2.5)
+lines(x=c(20,36), y=c(tailres2$coefficients[1]+20*tailres2$coefficients[2]+tailres2$coefficients[3],tailres2$coefficients[1]+36*tailres2$coefficients[2]+tailres2$coefficients[3]), type="l", lwd=2.5, lty=2)
+legend("topleft", inset=0.05, box.lwd=2, c("Female","Male"), 
+       pch=c(1,2), lty=c(1,2), cex=1.2, pt.lwd=2)
+text(33,11.5, "(A)", cex=2)
+
+# Plastron-vent length by carapace length
+plot(PV ~ CL, data=adults, pch=as.numeric(Sex), xlab="Carapace length (cm)",
+     ylab="Plastron-vent length (cm)", axes=FALSE, xlim=c(20,36), ylim=c(2,8),
+     cex.lab=1.3, type="n")
+axis(1, cex.lab=1.3, cex.axis=1.3, lwd=3)
+axis(2, cex.lab=1.3, cex.axis=1.3, lwd=3)
+points(PV ~ CL, data=adults, pch=as.numeric(Sex), lwd=2, cex=1.5)
+lines(x=c(20,36), y=c(pvmod2$coefficients[1]+20*pvmod2$coefficients[2],pvmod2$coefficients[1]+36*pvmod2$coefficients[2]), type="l", lwd=2.5)
+lines(x=c(20,36), y=c(pvmod2$coefficients[1]+20*pvmod2$coefficients[2]+pvmod2$coefficients[3],pvmod2$coefficients[1]+36*pvmod2$coefficients[2]+pvmod2$coefficients[3]), type="l", lwd=2.5, lty=2)
+text(33,7.6, "(B)", cex=2)
+
+# Axis titles
+title(xlab = "Carapace length (cm)", outer=TRUE, line=2.4, cex.sub=1.8, cex.lab=1.8)
+title(ylab = "Plastron-vent length (cm)            Tail length (cm)          ", outer=TRUE, line=2.4, cex.sub=1.6, cex.lab=1.6)
 
 
 

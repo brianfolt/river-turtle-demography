@@ -1,132 +1,132 @@
-﻿Species,Identification_number,Status,Date,Session,Occasion,Sex,Juvenile,Male,CL,PL,Mass,Tail_length,Plastron_to_vent,Missing_foot,Mark,Mark From Notes,Calipers,Location,Coords,Coords,Time,Parasites,Notes
-Rhinoclemmys funerea,1,new,15-Jan-14,A,1,M,0,1,24.5,22.0,,,,0,LM1,1 LM,0,Quebrada Sura near SAT 180,,,1245,,"basking on bank; captured by hand in water. Plastron slightly concave, suggesting male sex. Was not able to coax tail from shell to measure relative to carapace"
-Rhinoclemmys funerea,2M,new,15-Jan-14,A,1,M,0,1,29.7,26.0,3400,,,0,LM2,2 LM,0,Quebrada Sura near SAT 350,10.43219,-84.01623,1330,,Digging in leaf litter (for food?) 16 m from water. Highly concave plastron. 1330
-Rhinoclemmys funerea,2M,recap,30-Jan-14,A,10,M,0,1,,,,,,0,LM2,2 LM,0,"Quebrada Surá, perpendicular to SAT 500",10.43219,-84.01623,,,
-Rhinoclemmys funerea,2M,recap,23-May-14,,,M,0,1,29.2,26.0,3500,,,0,LM2,2 LM,1,"Quebrada Surá, perpendicular to SAT 500",10.43219,-84.01623,938,,Captured in water
-Rhinoclemmys funerea,2M,recap,5-Sep-14,,,M,0,1,29.8,26.1,3450,,,0,LM2,2 LM,1,,10.43279,-84.01685,,,
-Rhinoclemmys funerea,2M,recap,8-Sep-14,,,M,0,1,29.8,26.1,,,,0,LM2,2 LM,1,Honey Hole,10.43234,-84.0162,1140,,
-Rhinoclemmys funerea,2M,recap,13-Nov-14,,,M,0,1,29.7,26.0,,,,0,LM2,2 LM,1,Shady Hollow,10.43279,-84.01686,1640,,
-Rhinoclemmys funerea,2F,new,26-Jan-14,A,8,F,0,0,29.2,27.2,3875,7.1,3.5,0,LM2,2 LM,0,,10.43203,-84.01755,1501,,"Basking on shore, dove in, captured by hand"
-Rhinoclemmys funerea,2F,recap,26-May-14,,,F,0,0,28.9,27.1,,,,0,LM2,2 LM,1,SAT 460,,,,,
-Rhinoclemmys funerea,3,new,15-Jan-14,A,1,M,0,1,29.0,25.5,3225,8.9,5.6,1,"LM1,2","1,2 LM",0,Quebrada Sura near SAT 350,10.43219,-84.01623,1330,,Missing front left hand. Hand captured while eating/foraging for fresh green vegetation along shoreline of creek.
-Rhinoclemmys funerea,3,recap,17-Jan-14,A,2,M,0,1,,,,,,1,"LM1,2","1,2 LM",0,Quebrada Sura near SAT 350,10.43219,-84.01623,1604,,Perched on shoreline; captured in water
-Rhinoclemmys funerea,3,recap,24-Jan-14,A,6,M,0,1,,,,,,1,"LM1,2","1,2 LM",0,Quebrada Sura near SAT 350,10.43219,-84.01623,1400,,Perched on shoreline; captured in water
-Rhinoclemmys funerea,3,recap,28-Jan-14,A,9,M,0,1,,,,,,1,"LM1,2","1,2 LM",0,Quebrada Sura near SAT 350,10.43219,-84.01623,NA,,Perched on shoreline; captured in water
-Rhinoclemmys funerea,3,recap,2-Feb-14,A,11,M,0,1,,,3225,,,1,"LM1,2","1,2 LM",0,Quebrada Sura near SAT 350,10.43219,-84.01623,NA,,Perched in shallows; captured in water
-Rhinoclemmys funerea,3,recap,8-Feb-14,A,13,M,0,1,,,,,,1,"LM1,2","1,2 LM",0,Quebrada Sura near SAT 350,10.43219,-84.01623,1350,,Perched in shallows; captured in water
-Rhinoclemmys funerea,3,recap,28-May-14,,,M,0,1,see notes,,,,,1,"LM1,2","1,2 LM",1,Quebrada Sura near SAT 350,10.43219,-84.01623,950,,Perched in shallows; captured in water
-Rhinoclemmys funerea,3,recap,11-Jun-15,,,M,0,1,28.4,25.5,,,,1,"LM1,2","1,2 LM",1,Quebrada Sura near SAT 350,10.43219,-84.01623,2055,,Perched in muck in shallows; captured in water
-Rhinoclemmys funerea,3,recap,12-Jun-15,,,M,0,1,,,,,,1,"LM1,2","1,2 LM",1,Quebrada Sura near SAT 350,10.43219,-84.01623,1323,,Perched in muck in shallows; captured in water
-Rhinoclemmys funerea,4,new,17-Jan-14,A,2,F,0,0,27.8,26.5,,7.2,3.7,0,LM3,3 LM,0,Quebrada Sura stretch perpendicular from SAT 325,,,1540,,Perched on shoreline; dove in when startled by me; captured by hand in water. Flat plastron and cloaca stretches to edge of carapace = female
-Rhinoclemmys funerea,4,recap,18-Jan-14,A,3,F,0,0,,,,,,0,LM3,3 LM,0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,1355,,
-Rhinoclemmys funerea,4,recap,21-May-14,,,F,0,0,28.8,26.7,,,,0,LM3,3 LM,1,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,800,,Foraging on land up near SAT trail
-Rhinoclemmys funerea,4,recap,23-May-14,,,F,0,0,28.6,26.8,3800,,,0,LM3,3 LM,1,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,938,,Captured in water
-Rhinoclemmys funerea,5,new,17-Jan-14,A,2,F,0,0,28.5,26.8,3100,6.1,3.1,0,"LM1,3","1,3 LM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,1604,,Perched on shoreline; dove in when startled by me; captured by hand in water. Flat plastron and cloaca stretches to edge of carapace = female
-Rhinoclemmys funerea,5,recap,3-Feb-14,A,12,F,0,0,,,3100,,,0,"LM1,3","1,3 LM",0,"Quebrada Sura, 50 m downstream from Honey Hole",,,1546,,"Swimming, captured by hand"
-Rhinoclemmys funerea,6,new,19-Jan-14,A,4,M,0,1,28.7,24.8,3500,,,0,"LM2,3","2,3 LM",0,Quebrada Sura stretch just near SAT 450,,,1508,,Perched on shoreline; dove in when startled by me; captured by hand in water. Highly concave plastron = male.
-Rhinoclemmys funerea,6,recap,10-Feb-14,A,14,M,0,1,,,,,,0,"LM2,3","2,3 LM",0,Quebrada Surá at final area,10.43203,-84.01755,1600,,"Swimming, captured by hand"
-Rhinoclemmys funerea,6,recap,24-Feb-14,A,18,M,0,1,,,3500,,,0,"LM2,3","2,3 LM",0,20 m downstream from final area,10.43241,-84.0178,1315,,Hiding in deep leaf litter muck in shallow water near shore
-Rhinoclemmys funerea,6,recap,27-Aug-14,,,M,0,1,28.8,24.8,3350,,,0,"LM2,3","2,3 LM",1,,10.43262,-84.01714,1552,,
-Rhinoclemmys funerea,6,recap,5-Sep-14,,,M,0,1,28.9,24.8,3500,,,0,"LM2,3","2,3 LM",1,20 m downstream from final area,10.43241,-84.0178,,,
-Rhinoclemmys funerea,7,new,20-Feb-14,A,15,M,0,1,24.6,21.8,2150,,,0,"LM1,2,3","1,2,3 LM",0,Surá at the honey hole near SAT 345,10.43219,-84.01623,1440,,
-Rhinoclemmys funerea,7,recap,24-Feb-14,A,18,M,0,1,,,,7.5,4.8,0,"LM1,2,3","1,2,3 LM",0,Surá at the final area,10.43203,-84.01755,1305,,
-Rhinoclemmys funerea,7,recap,27-Aug-14,,,M,0,1,24.2,21.6,2150,,,0,"LM1,2,3","1,2,3 LM",1,Surá at the honey hole near SAT 345,10.43234,-84.0162,1522,,
-Rhinoclemmys funerea,7,recap,12-Jun-15,,,M,0,1,24.3,21.5,,,,0,"LM1,2,3","1,2,3 LM",1,Surá at the honey hole near SAT 345,10.43234,-84.0162,1323,,Foraging in muck near shoreline; captured by hand
-Rhinoclemmys funerea,10,new,18-Jan-14,A,3,F,0,0,26.2,23.3,,6.3,3.4,0,RM1,1 RM,0,"Quebrada Sura, ca. 100 m downstream from bridge @ LOC",,,1240,,Perched on shoreline; dove in when startled by me; captured by hand in water.
-Rhinoclemmys funerea,11,new,18-Jan-14,A,3,M,0,1,26.2,23.3,2320,7.5,4.4,0,LM1; RM1,1 LM; 1 RM,0,"Quebrada Sura, ca. 50 m downstream from bridge @ LOC",,,1312,,Perched on shoreline; dove in when startled by me; captured by hand in water.
-Rhinoclemmys funerea,12,new,18-Jan-14,A,3,F,0,0,30.0,28.5,4100,6.7,3.5,0,LM2; RM1,2 LM; 1 RM,0,"Quebrada Sura, upstream 100 m from honey hole by SAT 350",10.43219,-84.01623,1413,,Perched still on bottom of river; captured by hand
-Rhinoclemmys funerea,12,recap,2-Feb-14,A,11,F,0,0,,,4100,,,0,LM2; RM1,2 LM; 1 RM,0,"Quebrada Sura, upstream 100 m from honey hole by SAT 350 NEAR LOGJAM",,,,,"Perched on shoreline, captured in water"
-Rhinoclemmys funerea,12,recap,8-Feb-14,A,13,F,0,0,,,,,,0,LM2; RM1,2 LM; 1 RM,0,"Quebrada Sura, upstream 100 m from honey hole",,,1615,,Swimming in casually in river; captured by hand.
-Rhinoclemmys funerea,12,recap,23-May-14,,,F,0,0,29.7,28.1,4250,,,0,LM2; RM1,2 LM; 1 RM,1,"Quebrada Sura, 50 m downstream from end",,,1035,,"Basking on shore, captured by hand"
-Rhinoclemmys funerea,13,new,20-Jan-14,,,F,0,0,24.9,22.2,,,,0,"LM1,2; RM1","1,2 LM; 1 RM",0,"Quebrada Sura, due north of SURA 700 (at the La Selva north orientation) ",,,1547,,Swimming in casually in river; captured by hand. Forgot to take mass :(
-Rhinoclemmys funerea,14,new,21-Jan-14,A,5,F,0,0,25.8,24.3,2400,,,0,LM3; RM1,3 LM; 1 RM,0,"Quebrada Sura, swimming near SAT 340 Honey Hole ",10.43219,-84.01623,2113,,
-Rhinoclemmys funerea,14,recap,30-Jan-14,A,10,F,0,0,,,,,,0,LM3; RM1,3 LM; 1 RM,0,"Quebrada Surá, at the SAT 345 honey hole",10.43219,-84.01623,2026,,
-Rhinoclemmys funerea,14,recap,23-Feb-14,A,17,F,0,0,,,,,,0,LM3; RM1,3 LM; 1 RM,0,"Quebrada Surá, at the SAT 345 honey hole",10.43219,-84.01623,2107,,Perched in shallows; captured in water
-Rhinoclemmys funerea,14,recap,27-Aug-14,,,F,0,0,25.0,23.7,2500,,,0,LM3; RM1,3 LM; 1 RM,1,"Quebrada Surá, at the SAT 345 honey hole",10.43234,-84.0162,1522,,
-Rhinoclemmys funerea,14,recap,10-Sep-14,,,F,0,0,25.0,23.7,2600,,,0,LM3; RM1,3 LM; 1 RM,1,,10.43218,-84.01552,1405,,
-Rhinoclemmys funerea,15,new,21-Jan-14,A,5,M,0,1,28.8,25.4,3500,10.6,6.5,1,"LM1,3; RM1","1,3 LM; 1 RM",0,"Quebrada Sura, in deep hole n SAT 400 ",,,2140,,Missing back left foot
-Rhinoclemmys funerea,15,recap,26-Jan-14,A,8,M,0,1,,,,,,1,"LM1,3; RM1","1,3 LM; 1 RM",0,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1440,,Missing back left foot
-Rhinoclemmys funerea,15,recap,10-Feb-14,A,14,M,0,1,,,,,,1,"LM1,3; RM1","1,3 LM; 1 RM",0,Logjam 50 m upstream from LOC bridge,,,1513,,Basking shallow water; captured by hand
-Rhinoclemmys funerea,15,recap,30-Sep-14,,,M,0,1,29.3,25.5,3525,,,1,"LM1,3; RM1","1,3 LM; 1 RM",1,"""Shady Curve"" Spot",10.43272,-84.01685,1438,,Missing back left foot
-Rhinoclemmys funerea,16,new,24-Jan-14,,,JF,1,0,17.0,15.8,795,,,0,"LM2,3;  RM1","2,3 LM; 1 RM",0,Quebrada Surá near Castilla elastica tree #1,10.43131,-84.01144,1505,,Sub-adult!
-Rhinoclemmys funerea,16,recap,20-Aug-14,,,JF,1,0,17.9,16.4,,4.0,1.8,0,"LM2,3;  RM1","2,3 LM; 1 RM",0,"Nice hole 25 m downstream from CASELA 1, beneath the CEIBA tree",10.43134,-84.01105,,,
-Rhinoclemmys funerea,17,new,24-Feb-14,,,M,0,1,24.2,20.9,2250,,,1,"LM1,2,3; RM1","1,2,3 LM; 1 RM",0,Quebrada Surá near Castilla elastica tree #1,10.43131,-84.01144,1400,,Missing back right foot; stub tail
-Rhinoclemmys funerea,20,new,24-Jan-14,A,6,M,0,1,31.4,26.4,3730,9.2,5.2,0,RM2,2 RM,0,Quebrada Surá near SAT 50,,,1330,,Moving around floodplain
-Rhinoclemmys funerea,20,recap,25-Jan-14,A,9,M,0,1,,,,,,0,RM2,2 RM,0,Quebrada Surá near Castilla elastica tree #1,10.43131,-84.01144,1605,,Captured by hand in water
-Rhinoclemmys funerea,20,recap,28-Jan-14,A,11,M,0,1,,,,,,0,RM2,2 RM,0,Quebrada Surá basking just downstream of LOC bridge,,,1345,,Captured by hand in water
-Rhinoclemmys funerea,20,recap,2-Feb-14,,,M,0,1,,,,,,0,RM2,2 RM,0,,,,,,Captured by hand in water; mark is kind of shitty and would be nice to improve with a file
-Rhinoclemmys funerea,20,recap,1-Oct-14,,,M,0,1,30.6,26.3,3650,,,0,RM2,2 RM,1,Quebrada Surá at Honey Hole,10.43219,-84.01623,1600,,
-Rhinoclemmys funerea,21,new,24-Jan-14,,,M,0,1,30.6,26.2,,,,0,LM1; RM2,1 LM; 2 RM,0,Quebrada Surá near Castilla elastica tree #1,10.43131,-84.01144,1455,,Hand captured while wading down river
-Rhinoclemmys funerea,22,new,24-Jan-14,,,M,0,1,30.2,25.6,,,,0,LM2; RM2,2 LM; 2 RM,0,Quebrada Surá near Castilla elastica tree #1,10.43131,-84.01144,1455,,Hand captured while wading down river
-Rhinoclemmys funerea,23,new,24-Jan-14,,,M,0,1,27.5,24.4,,8.5,5.0,0,"LM1,2; RM2","1,2 LM; 2 RM",0,Quebrada Surá near Castilla elastica tree #1,10.43131,-84.01144,1505,,Hand captured while wading down river
-Rhinoclemmys funerea,24,new,24-Jan-14,,,F,0,0,29.8,27.5,,,,0,LM3; RM2,3 LM; 2 RM,0,"Quebrada Surá, 50 m downstream from Castilla elastica tree #1",,,1543,,Hand captured while wading down river
-Rhinoclemmys funerea,25,new,25-Jan-14,A,7,F,0,0,23.6,21.4,1720,,,0,"LM1,3; RM2","1,3 LM; 2 RM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,1408,,Hand captured in water
-Rhinoclemmys funerea,25,recap,21-May-14,,,F,0,0,23.5,21.1,,,,0,"LM1,3; RM2","1,3 LM; 2 RM",1,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,800,,Foraging on land up near SAT trail
-Rhinoclemmys funerea,26,new,25-Jan-14,A,7,F,0,0,26.8,24.3,2825,6.2,3.4,0,"LM2,3; RM2","2,3 LM; 2 RM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,1408,,Hand captured in water
-Rhinoclemmys funerea,26,recap,30-Jan-14,A,10,F,0,0,,,2750,,,0,"LM2,3; RM2","2,3 LM; 2 RM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,2026,,
-Rhinoclemmys funerea,27,new,28-Feb-14,A,19,F,0,0,23.9,22.4,2200,5.9,2.8,1,"LM1,2,3; RM2","1,2,3 LM; 2 RM",0,"Quebrada Sura, stretch perpendicular to SAT 120",,,1444,,Swimming casually; missing back left foot.
-Rhinoclemmys funerea,30,new,28-Jan-14,A,9,F,0,0,29.0,26.5,3380,6.0,2.9,0,"RM1,2","1,2 RM",0,Quebrada Sura stretch perpendicular from SAT 75,,,1355,,"Basking on sunny logs, dove in, captured by hand"
-Rhinoclemmys funerea,31,new,28-Jan-14,A,9,M,0,1,23.5,21.1,1740,6.5,3.7,0,"LM1; RM1,2","1 LM; 1,2 RM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,NA,,Hand capture
-Rhinoclemmys funerea,31,recap,10-Feb-14,A,14,M,0,1,,,,,,0,"LM1; RM1,2","1 LM; 1,2 RM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,1525,,
-Rhinoclemmys funerea,31,recap,16-Feb-14,,,M,0,1,,,,,,0,"LM1; RM1,2","1 LM; 1,2 RM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,2140,,Captured by hand along shoreline -- NOT DURING A STANDARDIZED SAMPLING SURVEY
-Rhinoclemmys funerea,32,new,30-Jan-14,A,10,M,0,1,28.6,23.3,2750,8.9,5.3,0,"LM2; RM1,2","2 LM; 1,2 RM",0,,10.43203,-84.01755,,,
-Rhinoclemmys funerea,32,recap,26-May-14,,,M,0,1,27.9,23.1,,9.2,6.1,0,"LM2; RM1,2","2 LM; 1,2 RM",1,"SAT 470, just before end spot",,,,,Raked out of leaf pack
-Rhinoclemmys funerea,32,recap,1-Oct-14,,,M,0,1,27.8,23.1,,,,0,"LM2; RM1,2","2 LM; 1,2 RM",1,"SAT 470, just before end spot",,,,,
-Rhinoclemmys funerea,33,new,2-Feb-14,A,11,M,0,1,27.4,23.3,2700,7.8,4.4,0,"LM1,2; RM1,2","1,2 LM; 1,2 RM",0,"Quebrada Surá, 50 m upstream from LOC bridge",,,1410,,"Casually swimming, captured by hand"
-Rhinoclemmys funerea,33,recap,23-May-14,,,M,0,1,26.3,23.1,2800,,,0,"LM1,2; RM1,2","1,2 LM; 1,2 RM",1,"Quebrada Surá, 30 m downstream from Dipteryx tree",,,920,,Perched on shoreline
-Rhinoclemmys funerea,33,recap,12-Jun-15,,,M,0,1,26.3,22.1,,,,,"LM1,2; RM1,2","1,2 LM; 1,2 RM",1,"Quebrada Surá, 30 m downstream from Dipteryx tree",,,1311,,Perched on shoreline
-Rhinoclemmys funerea,34,new,21-Feb-14,A,16,M,0,1,24.4,21.5,1950,7.8,4.5,0,"LM3; RM1,2","3LM; 1,2 RM",0,Quebrada Surá at Honey Hole,10.43219,-84.01623,2054,,"Chilling in shallows near shore, captured by hand"
-Rhinoclemmys funerea,35,new,7-May-14,,,M,0,1,30.0,25.7,,,,0,"LM1,3; RM1,2","1,3 LM; 1,2 RM",1,Quebrada Surá at Castilla elastica #1,10.43131,-84.01144,1300,,"Chilling in leaf litter of floodplain, 3 m south from CASELA #1 mark-recapture plot, 10 m from water"
-Rhinoclemmys funerea,36,new,8-May-14,,,M,0,1,27.1,23.5,,8.5,5.1,0,"LM2,3; RM1,2","2,3 LM; 1,2 RM",1,Quebrada Surá at that nice Dipteryx,,,1200,,Swimming
-Rhinoclemmys funerea,37,new,23-May-14,,,M,0,1,29.0,25.0,,9.0,5.1,0,"LM1,2,3; RM1,2","1,2,3 LM; 1,2 RM",1,Quebrada Surá at the Deep Hole near SAT 400,,,952,,"Basking on shoreline, grabbed in water"
-Rhinoclemmys funerea,40,new,25-Jan-14,A,7,M,0,1,27.7,24.8,2970,8.1,4.9,0,RM3,3 RM,0,,10.43203,-84.01755,1440,,"Basking on bank, dove in, captured by hand"
-Rhinoclemmys funerea,41,new,25-Jan-14,A,7,F,0,0,29.5,27.2,3535,,,0,LM1; RM3,1 LM; 3 RM,0,,10.43203,-84.01755,1440,5 ticks (Embolomura?),"Basking on bank, dove in, captured by hand"
-Rhinoclemmys funerea,42,new,26-Jan-14,,,M,0,1,27.6,23.3,2850,8.5,5.4,0,LM2; RM3,2 LM; 3 RM,0,100 m downstream from Taconazo X Surá,,,1520,,"Swimming in water, hand captured"
-Rhinoclemmys funerea,43,new,26-Jan-14,,,M,0,1,28.8,24.1,2925,7.9,4.6,0,"LM1,2; RM3","1,2 LM; 3 RM",0,,,,,,
-Rhinoclemmys funerea,44,new,21-May-14,,,F,0,0,29.0,26.1,,6.4,3.2,0,LM3; RM3,3 LM; 3 RM,1,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,800,,Foraging on land up near SAT trail
-Rhinoclemmys funerea,45,new,23-May-14,,,F,0,0,26.5,24.4,3200,,,0,"LM1,3; RM3","1,3 LM; 3 RM",1,Quebrada Sura 50 m upstream from the Deep Hole,,,1010,,Swimming then captured
-Rhinoclemmys funerea,45,recap,5-Sep-14,,,F,0,0,26.7,24.5,3000,,,0,"LM1,3; RM3","1,3 LM; 3 RM",1,Quebrada Sura at Honey Hole SAT 345,10.43234,-84.0162,,,
-Rhinoclemmys funerea,45,recap,9-Sep-14,,,F,0,0,26.6,24.5,2950,,,0,"LM1,3; RM3","1,3 LM; 3 RM",1,,10.43276,-84.01685,1210,,
-Rhinoclemmys funerea,46,new,5-Sep-14,,,M,0,1,25.7,22.8,2350,,,0,"LM2,3; RM3","2,3 LM; 3 RM",1,Quebrada Sura at Honey Hole SAT 345,10.43234,-84.0162,,,
-Rhinoclemmys funerea,47,new,9-Sep-14,,,F,0,0,25.2,23.4,2575,,,0,"LM1,2,3; RM3","1,2,3 LM; 3 RM",1,"Surá, 5 m downstream from LOC bridge",10.43336,-84.01395,1125,,COORDINATES FROM BRIDGE
-Rhinoclemmys funerea,100,new,2-Feb-14,A,11,M,0,1,31.0,25.5,3875,8.1,4.7,0,LM12,12 LM,0,Quebrada Surá at the LOC bridge,10.43336,-84.01395,1250,,"Casually swimming, captured by hand"
-Rhinoclemmys funerea,100,recap,17-Jul-14,,,M,0,1,30.8,25.4,,,,0,LM12,12 LM,0,Castilla elastica #3 study site,10.43248,-84.01205,1400,,Crawling around study plot
-Rhinoclemmys funerea,100,recap,1-Oct-14,,,M,0,1,30.5,25.3,3950,,,0,LM12,12 LM,1,,10.43277,-84.01704,,,
-Rhinoclemmys funerea,101,new,3-Feb-14,,,M,0,1,34.4,29.2,4700,10.7,6.6,0,"LM1,12","1,12 LM",0,"Quebrada Surá, 50 m downstream from LOC bridge",,,1505,,"Casually swimming, captured by hand"
-Rhinoclemmys funerea,102,new,3-Feb-14,,,F,0,0,29.7,25.7,3400,6.6,2.9,0,"LM2,12","2,12 LM",0,"Quebrada Surá, 50 m downstream from LOC bridge",,,1517,,"Casually swimming, captured by hand"
-Rhinoclemmys funerea,103,new,8-Feb-14,A,13,M,0,1,26.7,22.7,2600,,,0,"LM1,2,12","1,2,12 LM",0,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1350,,"Chilling in shallows near shore, captured by hand"
-Rhinoclemmys funerea,103,recap,23-May-14,,,M,0,1,25.8,22.8,2550,,,0,"LM1,2,12","1,2,12 LM",1,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,938,,"Chilling in shallows near shore, captured by hand"
-Rhinoclemmys funerea,104,new,28-Feb-14,A,19,M,0,1,27.7,25.0,2975,,,0,"LM3,12","3,12 LM",0,"Quebrada Sura, 40 m upstream from LOC bridge",,,1425,,"Casually swimming, captured by hand"
-Rhinoclemmys funerea,105,new,26-May-14,,,F,0,0,26.3,24.4,,,,0,"LM1,3,12","1,3,12 LM",1,CES 600-700 approximate,,,1310,,Cruising across a ridgetop? Don't know what she was doing up here
-Rhinoclemmys funerea,106,new,26-May-14,,,F,0,0,20.3,21.7,,4.8,2.3,0,"LM2,3,12","2,3,12 LM",1,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,,,
-Rhinoclemmys funerea,107,new,29-Sep-14,,,JM,1,1,20.6,18.3,1300,6.3,3.8,0,"LM1,2,3,12","1,2,3,12 LM",1,End of transect,10.43211,-84.01786,1525,,
-Rhinoclemmys funerea,110,new,3-Feb-14,A,12,M,0,1,31.6,27.9,4100,7.9,4.9,0,LM12; RM1,12 LM; 1 RM,0,Quebrada Surá at final area,10.43203,-84.01755,1601,"1 tick, posterior skin above tail","Casually swimming, captured by hand"
-Rhinoclemmys funerea,110,recap,8-Feb-14,A,13,M,0,1,,,,,,0,LM12; RM1,12 LM; 1 RM,0,SAT 450,,,1625,,"Casually swimming, captured by hand"
-Rhinoclemmys funerea,110,recap,8-Sep-14,,,M,0,1,31.2,27.8,4100,,,0,LM12; RM1,12 LM; 1 RM,1,,10.4329,-84.01697,1152,,
-Rhinoclemmys funerea,111,new,8-Feb-14,A,13,M,0,1,24.4,21.2,2000,7.7,4.7,0,"LM1,12; RM1","1,12 LM; 1 RM",0,Quebrada Surá at final area,10.43203,-84.01755,1630,,"Casually swimming, captured by hand"
-Rhinoclemmys funerea,111,recap,1-Oct-14,,,M,0,1,23.9,21.2,2025,,,0,"LM1,12; RM1","1,12 LM; 1 RM",1,Quebrada Surá at final area,10.43203,-84.01755,,,"PLASTRON STARTING TO BECOME CONCAVE, TAIL LONG == MALE"
-Rhinoclemmys funerea,112,new,10-Feb-14,A,14,M,0,1,27.3,23.2,2650,,,0,"LM2,12; RM1","2,12 LM; 1 RM",0,Quebrada Surá at Honey Hole,10.43219,-84.01623,1525,,
-Rhinoclemmys funerea,112,recap,21-Feb-14,A,16,M,0,1,,,,,,0,"LM2,12; RM1","2,12 LM; 1 RM",0,Quebrada Surá at Honey Hole,10.43219,-84.01623,2054,,"Chilling in shallows near shore, captured by hand"
-Rhinoclemmys funerea,112,recap,9-Sep-14,,,M,0,1,26.4,23.2,2700,,,0,"LM2,12; RM1","2,12 LM; 1 RM",1,Quebrada Surá at Honey Hole,10.4323,-84.0164,1200,,Noodled from under a log
-Rhinoclemmys funerea,113,new,10-Feb-14,A,14,M,0,1,25.4,22.8,,7.0,3.9,0,"LM1,2,12; RM1","1,2,12 LM; 1 RM",0,Quebrada Surá at Honey Hole,10.43219,-84.01623,1525,,
-Rhinoclemmys funerea,114,new,13-Nov-14,,,JM,1,1,21.6,19.6,,6.8,3.6,0,"LM3,12; RM1","3,12 LM; 1 RM",1,Quebrada Surá at Honey Hole,10.43219,-84.01623,1610,,
-Rhinoclemmys funerea,115,new,13-Nov-14,,,M,0,1,24.2,21.5,,7.5,4.4,0,"LM1,3,12; RM1","1,3,12 LM; 1 RM",1,Quebrada Surá at Honey Hole,10.43219,-84.01623,1610,,
-Rhinoclemmys funerea,116,new,13-Jun-15,,,J,1,0,13.9,13.0,,,,0,"LM2,3,12; RM1","2,3,12 LM; 1 RM",1,Quebrada Surá at Honey Hole,10.43219,-84.01623,1630,,
-Rhinoclemmys funerea,120,new,20-Feb-14,A,15,F,0,0,28.0,26.8,3400,,,0,LM12; RM2,12 LM; 2 RM,0,Quebrada Surá at Honey Hole,10.43219,-84.01623,1440,,Stub tail
-Rhinoclemmys funerea,121,new,24-Feb-14,A,18,M,0,1,29.9,25.9,3500,,,0,"LM1,12; RM2","1,12 LM; 2 RM",0,20 m downstream from final area,,,1311,,Hiding in deep leaf litter muck in shallows near shore
-Rhinoclemmys funerea,121,recap,5-Sep-14,,,M,0,1,29.2,25.5,3400,,,0,"LM1,12; RM2","1,12 LM; 2 RM",1,,10.43243,-84.01725,1557,,
-Rhinoclemmys funerea,121,recap,29-Sep-14,,,M,0,1,29.1,25.5,3450,,,0,"LM1,12; RM2","1,12 LM; 2 RM",1,"Surá, 20 m upstream from deep hole",10.43274,-84.01685,,,
-Rhinoclemmys funerea,121,recap,30-Sep-14,,,M,0,1,,,,,,0,"LM1,12; RM2","1,12 LM; 2 RM",1,Quebrada Surá at Honey Hole,10.43219,-84.01623,1423,,
-Rhinoclemmys funerea,122,new,28-Feb-14,A,19,M,0,1,25.8,22.2,2400,,,0,"LM2,12; RM2","2,12 LM; 2 RM",0,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1444,,"Perched in shallows near shore, captured by hand"
-Rhinoclemmys funerea,200,new,10-Feb-14,A,14,M,0,1,29.2,25.4,3100,,,0,LM11,11 LM,0,Deep hole upstream from Honey Hole,10.4326,-84.0168,,,
-Rhinoclemmys funerea,201,new,28-Feb-14,A,19,F,0,0,28.2,26.6,3400,,,0,"LM1,11","1,11 LM",0,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1444,,"Perched in shallows near shore, captured by hand"
-Rhinoclemmys funerea,300,new,28-Feb-14,A,19,M,0,1,29.8,25.8,3350,,,0,"LM11,12","11,12 LM",0,"Quebrada Sura, in deep hole n SAT 400 ",,,1524,,Casually swimming; noodled under a log
-Rhinoclemmys funerea,300,recap,29-Sep-14,,,M,0,1,28.8,26.0,3350,,,0,"LM11,12","11,12 LM",1,"Surá, 20 m upstream from deep hole",10.43274,-84.01685,,,
-Rhinoclemmys funerea,300,recap,13-Jun-15,,,M,0,1,28.9,26.0,,,,0,"LM11,12","11,12 LM",1,In between the two bends downstream from the Honey Hole,,,1624,,Swimming
-Rhinoclemmys funerea,303,new,13-Jun-15,,,JF,1,0,20.6,19.0,,,,0,"LM1,2,11,12","1,2,11,12 LM",1,Honey Hole,10.43219,-84.01623,1630,,"Probably best to classify as juvenile; had a flat plastron, but maybe too small to develop concavity of plastron, so, probably best to classify as J"
-Rhinoclemmys funerea,1000,new,8-Feb-14,A,13,M,0,1,26.6,23.3,2600,,,0,RM12,12 RM,0,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1350,,"Chilling in shallows near shore, captured by hand"
-Rhinoclemmys funerea,1000,recap,10-Sep-14,,,M,0,1,26.2,23.2,2625,,,0,RM12,12 RM,1,,10.43273,-84.01506,1352,,
-Rhinoclemmys funerea,1000,recap,29-Sep-14,,,M,0,1,26.2,23.2,2800,,,0,RM12,12 RM,1,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1423,,
-Rhinoclemmys funerea,4040,new,13-Jun-15,,,J,1,0,14.5,13.3,,35.0,16.0,0,"RM4,10","4,10 RM",1,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1423,,
-Rhinoclemmys funerea,scarface,new,24-Feb-14,A,18,M,0,1,26.6,23.3,,,,1,"LM1,2,3,4,8,9; RM7,8,9,10","1,2,3,4,8,9 LM; 7,8,9,10 RM",0,"Quebrada Surá, 20 m upstream from deep hole",,,13310,,"Casually swimming. Right back leg stump. Numerous shell notchings and deformities, stump tail, plastron with scattered pocketed deformities. Crocodilian attack?"
-Chelydra acutirostris,NA,NA,12-Jun-15,,,F,0,0,32.0,,,,,0,NA,NA,1,"Quebrada Surá, at little shitty wooden bridge",,,,,
+﻿Species,Number,Status,Date,Julian,Survey,Session,Occasion,AgeSex,ReproSex,Juvenile,Male,CL,PL,Mass,TL,PV,MissingFoot,Mark,Mark_Notes,Calipers,Location,Coords,Coords,Time,Parasites,Notes
+Rhinoclemmys funerea,1,new,15-Jan-14,41654,Yes,A,1,M,M,0,1,24.5,22.0,,,,0,LM1,1 LM,0,Quebrada Sura near SAT 180,,,1245,,"basking on bank; captured by hand in water. Plastron slightly concave, suggesting male sex. Was not able to coax tail from shell to measure relative to carapace"
+Rhinoclemmys funerea,2.1,new,15-Jan-14,41654,Yes,A,1,M,M,0,1,29.7,26.0,3400,,,0,LM2,2 LM,0,Quebrada Sura near SAT 350,10.43219,-84.01623,1330,,Digging in leaf litter (for food?) 16 m from water. Highly concave plastron. 1330
+Rhinoclemmys funerea,2.1,recap,30-Jan-14,41669,Yes,A,10,M,M,0,1,,,,,,0,LM2,2 LM,0,"Quebrada Surá, perpendicular to SAT 500",10.43219,-84.01623,,,
+Rhinoclemmys funerea,2.1,recap,23-May-14,41782,Yes,,,M,M,0,1,29.2,26.0,3500,,,0,LM2,2 LM,1,"Quebrada Surá, perpendicular to SAT 500",10.43219,-84.01623,938,,Captured in water
+Rhinoclemmys funerea,2.1,recap,5-Sep-14,41887,Yes,,,M,M,0,1,29.8,26.1,3450,,,0,LM2,2 LM,1,,10.43279,-84.01685,,,
+Rhinoclemmys funerea,2.1,recap,8-Sep-14,41890,Yes,,,M,M,0,1,29.8,26.1,,,,0,LM2,2 LM,1,Honey Hole,10.43234,-84.0162,1140,,
+Rhinoclemmys funerea,2.1,recap,13-Nov-14,41956,Yes,,,M,M,0,1,29.7,26.0,,,,0,LM2,2 LM,1,Shady Hollow,10.43279,-84.01686,1640,,
+Rhinoclemmys funerea,2.2,new,26-Jan-14,41665,Yes,A,8,F,F,0,0,29.2,27.2,3875,7.1,3.5,0,LM2,2 LM,0,,10.43203,-84.01755,1501,,"Basking on shore, dove in, captured by hand"
+Rhinoclemmys funerea,2.2,recap,26-May-14,41785,Yes,,,F,F,0,0,28.9,27.1,,,,0,LM2,2 LM,1,SAT 460,,,,,
+Rhinoclemmys funerea,3,new,15-Jan-14,41654,Yes,A,1,M,M,0,1,29.0,25.5,3225,8.9,5.6,1,"LM1,2","1,2 LM",0,Quebrada Sura near SAT 350,10.43219,-84.01623,1330,,Missing front left hand. Hand captured while eating/foraging for fresh green vegetation along shoreline of creek.
+Rhinoclemmys funerea,3,recap,17-Jan-14,41656,Yes,A,2,M,M,0,1,,,,,,1,"LM1,2","1,2 LM",0,Quebrada Sura near SAT 350,10.43219,-84.01623,1604,,Perched on shoreline; captured in water
+Rhinoclemmys funerea,3,recap,24-Jan-14,41663,Yes,A,6,M,M,0,1,,,,,,1,"LM1,2","1,2 LM",0,Quebrada Sura near SAT 350,10.43219,-84.01623,1400,,Perched on shoreline; captured in water
+Rhinoclemmys funerea,3,recap,28-Jan-14,41667,Yes,A,9,M,M,0,1,,,,,,1,"LM1,2","1,2 LM",0,Quebrada Sura near SAT 350,10.43219,-84.01623,NA,,Perched on shoreline; captured in water
+Rhinoclemmys funerea,3,recap,2-Feb-14,41672,Yes,A,11,M,M,0,1,,,3225,,,1,"LM1,2","1,2 LM",0,Quebrada Sura near SAT 350,10.43219,-84.01623,NA,,Perched in shallows; captured in water
+Rhinoclemmys funerea,3,recap,8-Feb-14,41678,Yes,A,13,M,M,0,1,,,,,,1,"LM1,2","1,2 LM",0,Quebrada Sura near SAT 350,10.43219,-84.01623,1350,,Perched in shallows; captured in water
+Rhinoclemmys funerea,3,recap,28-May-14,41787,No,,,M,M,0,1,,,,,,1,"LM1,2","1,2 LM",1,Quebrada Sura near SAT 350,10.43219,-84.01623,950,,Perched in shallows; captured in water
+Rhinoclemmys funerea,3,recap,11-Jun-15,42166,Yes,,,M,M,0,1,28.4,25.5,,,,1,"LM1,2","1,2 LM",1,Quebrada Sura near SAT 350,10.43219,-84.01623,2055,,Perched in muck in shallows; captured in water
+Rhinoclemmys funerea,3,recap,12-Jun-15,42167,Yes,,,M,M,0,1,,,,,,1,"LM1,2","1,2 LM",1,Quebrada Sura near SAT 350,10.43219,-84.01623,1323,,Perched in muck in shallows; captured in water
+Rhinoclemmys funerea,4,new,17-Jan-14,41656,Yes,A,2,F,F,0,0,27.8,26.5,,7.2,3.7,0,LM3,3 LM,0,Quebrada Sura stretch perpendicular from SAT 325,,,1540,,Perched on shoreline; dove in when startled by me; captured by hand in water. Flat plastron and cloaca stretches to edge of carapace = female
+Rhinoclemmys funerea,4,recap,18-Jan-14,41657,Yes,A,3,F,F,0,0,,,,,,0,LM3,3 LM,0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,1355,,
+Rhinoclemmys funerea,4,recap,21-May-14,41780,No,,,F,F,0,0,28.8,26.7,,,,0,LM3,3 LM,1,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,800,,Foraging on land up near SAT trail
+Rhinoclemmys funerea,4,recap,23-May-14,41782,Yes,,,F,F,0,0,28.6,26.8,3800,,,0,LM3,3 LM,1,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,938,,Captured in water
+Rhinoclemmys funerea,5,new,17-Jan-14,41656,Yes,A,2,F,F,0,0,28.5,26.8,3100,6.1,3.1,0,"LM1,3","1,3 LM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,1604,,Perched on shoreline; dove in when startled by me; captured by hand in water. Flat plastron and cloaca stretches to edge of carapace = female
+Rhinoclemmys funerea,5,recap,3-Feb-14,41673,Yes,A,12,F,F,0,0,,,3100,,,0,"LM1,3","1,3 LM",0,"Quebrada Sura, 50 m downstream from Honey Hole",,,1546,,"Swimming, captured by hand"
+Rhinoclemmys funerea,6,new,19-Jan-14,41658,Yes,A,4,M,M,0,1,28.7,24.8,3500,,,0,"LM2,3","2,3 LM",0,Quebrada Sura stretch just near SAT 450,,,1508,,Perched on shoreline; dove in when startled by me; captured by hand in water. Highly concave plastron = male.
+Rhinoclemmys funerea,6,recap,10-Feb-14,41680,Yes,A,14,M,M,0,1,,,,,,0,"LM2,3","2,3 LM",0,Quebrada Surá at final area,10.43203,-84.01755,1600,,"Swimming, captured by hand"
+Rhinoclemmys funerea,6,recap,24-Feb-14,41694,Yes,A,18,M,M,0,1,,,3500,,,0,"LM2,3","2,3 LM",0,20 m downstream from final area,10.43241,-84.0178,1315,,Hiding in deep leaf litter muck in shallow water near shore
+Rhinoclemmys funerea,6,recap,27-Aug-14,41878,Yes,,,M,M,0,1,28.8,24.8,3350,,,0,"LM2,3","2,3 LM",1,,10.43262,-84.01714,1552,,
+Rhinoclemmys funerea,6,recap,5-Sep-14,41887,Yes,,,M,M,0,1,28.9,24.8,3500,,,0,"LM2,3","2,3 LM",1,20 m downstream from final area,10.43241,-84.0178,,,
+Rhinoclemmys funerea,7,new,20-Feb-14,41690,Yes,A,15,M,M,0,1,24.6,21.8,2150,,,0,"LM1,2,3","1,2,3 LM",0,Surá at the honey hole near SAT 345,10.43219,-84.01623,1440,,
+Rhinoclemmys funerea,7,recap,24-Feb-14,41694,Yes,A,18,M,M,0,1,,,,7.5,4.8,0,"LM1,2,3","1,2,3 LM",0,Surá at the final area,10.43203,-84.01755,1305,,
+Rhinoclemmys funerea,7,recap,27-Aug-14,41878,Yes,,,M,M,0,1,24.2,21.6,2150,,,0,"LM1,2,3","1,2,3 LM",1,Surá at the honey hole near SAT 345,10.43234,-84.0162,1522,,
+Rhinoclemmys funerea,7,recap,12-Jun-15,42167,Yes,,,M,M,0,1,24.3,21.5,,,,0,"LM1,2,3","1,2,3 LM",1,Surá at the honey hole near SAT 345,10.43234,-84.0162,1323,,Foraging in muck near shoreline; captured by hand
+Rhinoclemmys funerea,10,new,18-Jan-14,41657,Yes,A,3,F,F,0,0,26.2,23.3,,6.3,3.4,0,RM1,1 RM,0,"Quebrada Sura, ca. 100 m downstream from bridge @ LOC",,,1240,,Perched on shoreline; dove in when startled by me; captured by hand in water.
+Rhinoclemmys funerea,11,new,18-Jan-14,41657,Yes,A,3,M,M,0,1,26.2,23.3,2320,7.5,4.4,0,LM1; RM1,1 LM; 1 RM,0,"Quebrada Sura, ca. 50 m downstream from bridge @ LOC",,,1312,,Perched on shoreline; dove in when startled by me; captured by hand in water.
+Rhinoclemmys funerea,12,new,18-Jan-14,41657,Yes,A,3,F,F,0,0,30.0,28.5,4100,6.7,3.5,0,LM2; RM1,2 LM; 1 RM,0,"Quebrada Sura, upstream 100 m from honey hole by SAT 350",10.43219,-84.01623,1413,,Perched still on bottom of river; captured by hand
+Rhinoclemmys funerea,12,recap,2-Feb-14,41672,Yes,A,11,F,F,0,0,,,4100,,,0,LM2; RM1,2 LM; 1 RM,0,"Quebrada Sura, upstream 100 m from honey hole by SAT 350 NEAR LOGJAM",,,,,"Perched on shoreline, captured in water"
+Rhinoclemmys funerea,12,recap,8-Feb-14,41678,Yes,A,13,F,F,0,0,,,,,,0,LM2; RM1,2 LM; 1 RM,0,"Quebrada Sura, upstream 100 m from honey hole",,,1615,,Swimming in casually in river; captured by hand.
+Rhinoclemmys funerea,12,recap,23-May-14,41782,Yes,,,F,F,0,0,29.7,28.1,4250,,,0,LM2; RM1,2 LM; 1 RM,1,"Quebrada Sura, 50 m downstream from end",,,1035,,"Basking on shore, captured by hand"
+Rhinoclemmys funerea,13,new,20-Jan-14,41659,No,,,F,F,0,0,24.9,22.2,,,,0,"LM1,2; RM1","1,2 LM; 1 RM",0,"Quebrada Sura, due north of SURA 700 (at the La Selva north orientation) ",,,1547,,Swimming in casually in river; captured by hand. Forgot to take mass :(
+Rhinoclemmys funerea,14,new,21-Jan-14,41660,Yes,A,5,F,F,0,0,25.8,24.3,2400,,,0,LM3; RM1,3 LM; 1 RM,0,"Quebrada Sura, swimming near SAT 340 Honey Hole ",10.43219,-84.01623,2113,,
+Rhinoclemmys funerea,14,recap,30-Jan-14,41669,Yes,A,10,F,F,0,0,,,,,,0,LM3; RM1,3 LM; 1 RM,0,"Quebrada Surá, at the SAT 345 honey hole",10.43219,-84.01623,2026,,
+Rhinoclemmys funerea,14,recap,23-Feb-14,41693,Yes,A,17,F,F,0,0,,,,,,0,LM3; RM1,3 LM; 1 RM,0,"Quebrada Surá, at the SAT 345 honey hole",10.43219,-84.01623,2107,,Perched in shallows; captured in water
+Rhinoclemmys funerea,14,recap,27-Aug-14,41878,Yes,,,F,F,0,0,25.0,23.7,2500,,,0,LM3; RM1,3 LM; 1 RM,1,"Quebrada Surá, at the SAT 345 honey hole",10.43234,-84.0162,1522,,
+Rhinoclemmys funerea,14,recap,10-Sep-14,41892,Yes,,,F,F,0,0,25.0,23.7,2600,,,0,LM3; RM1,3 LM; 1 RM,1,,10.43218,-84.01552,1405,,
+Rhinoclemmys funerea,15,new,21-Jan-14,41660,Yes,A,5,M,M,0,1,28.8,25.4,3500,10.6,6.5,1,"LM1,3; RM1","1,3 LM; 1 RM",0,"Quebrada Sura, in deep hole n SAT 400 ",,,2140,,Missing back left foot
+Rhinoclemmys funerea,15,recap,26-Jan-14,41665,Yes,A,8,M,M,0,1,,,,,,1,"LM1,3; RM1","1,3 LM; 1 RM",0,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1440,,Missing back left foot
+Rhinoclemmys funerea,15,recap,10-Feb-14,41680,Yes,A,14,M,M,0,1,,,,,,1,"LM1,3; RM1","1,3 LM; 1 RM",0,Logjam 50 m upstream from LOC bridge,,,1513,,Basking shallow water; captured by hand
+Rhinoclemmys funerea,15,recap,30-Sep-14,41912,Yes,,,M,M,0,1,29.3,25.5,3525,,,1,"LM1,3; RM1","1,3 LM; 1 RM",1,"""Shady Curve"" Spot",10.43272,-84.01685,1438,,Missing back left foot
+Rhinoclemmys funerea,16,new,24-Jan-14,41663,No,,,J,JF,1,0,17.0,15.8,795,,,0,"LM2,3;  RM1","2,3 LM; 1 RM",0,Quebrada Surá near Castilla elastica tree #1,10.43131,-84.01144,1505,,Sub-adult!
+Rhinoclemmys funerea,16,recap,20-Aug-14,41871,No,,,J,JF,1,0,17.9,16.4,,4.0,1.8,0,"LM2,3;  RM1","2,3 LM; 1 RM",0,"Nice hole 25 m downstream from CASELA 1, beneath the CEIBA tree",10.43134,-84.01105,,,
+Rhinoclemmys funerea,17,new,24-Feb-14,41694,No,,,M,M,0,1,24.2,20.9,2250,,,1,"LM1,2,3; RM1","1,2,3 LM; 1 RM",0,Quebrada Surá near Castilla elastica tree #1,10.43131,-84.01144,1400,,Missing back right foot; stub tail
+Rhinoclemmys funerea,20,new,24-Jan-14,41663,Yes,A,6,M,M,0,1,31.4,26.4,3730,9.2,5.2,0,RM2,2 RM,0,Quebrada Surá near SAT 50,,,1330,,Moving around floodplain
+Rhinoclemmys funerea,20,recap,25-Jan-14,41664,No,A,9,M,M,0,1,,,,,,0,RM2,2 RM,0,Quebrada Surá near Castilla elastica tree #1,10.43131,-84.01144,1605,,Captured by hand in water
+Rhinoclemmys funerea,20,recap,28-Jan-14,41667,Yes,A,11,M,M,0,1,,,,,,0,RM2,2 RM,0,Quebrada Surá basking just downstream of LOC bridge,,,1345,,Captured by hand in water
+Rhinoclemmys funerea,20,recap,2-Feb-14,41672,Yes,,,M,M,0,1,,,,,,0,RM2,2 RM,0,,,,,,Captured by hand in water; mark is kind of shitty and would be nice to improve with a file
+Rhinoclemmys funerea,20,recap,1-Oct-14,41913,Yes,,,M,M,0,1,30.6,26.3,3650,,,0,RM2,2 RM,1,Quebrada Surá at Honey Hole,10.43219,-84.01623,1600,,
+Rhinoclemmys funerea,21,new,24-Jan-14,41663,No,,,M,M,0,1,30.6,26.2,,,,0,LM1; RM2,1 LM; 2 RM,0,Quebrada Surá near Castilla elastica tree #1,10.43131,-84.01144,1455,,Hand captured while wading down river
+Rhinoclemmys funerea,22,new,24-Jan-14,41663,No,,,M,M,0,1,30.2,25.6,,,,0,LM2; RM2,2 LM; 2 RM,0,Quebrada Surá near Castilla elastica tree #1,10.43131,-84.01144,1455,,Hand captured while wading down river
+Rhinoclemmys funerea,23,new,24-Jan-14,41663,No,,,M,M,0,1,27.5,24.4,,8.5,5.0,0,"LM1,2; RM2","1,2 LM; 2 RM",0,Quebrada Surá near Castilla elastica tree #1,10.43131,-84.01144,1505,,Hand captured while wading down river
+Rhinoclemmys funerea,24,new,24-Jan-14,41663,No,,,F,F,0,0,29.8,27.5,,,,0,LM3; RM2,3 LM; 2 RM,0,"Quebrada Surá, 50 m downstream from Castilla elastica tree #1",,,1543,,Hand captured while wading down river
+Rhinoclemmys funerea,25,new,25-Jan-14,41664,Yes,A,7,F,F,0,0,23.6,21.4,1720,,,0,"LM1,3; RM2","1,3 LM; 2 RM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,1408,,Hand captured in water
+Rhinoclemmys funerea,25,recap,21-May-14,41780,No,,,F,F,0,0,23.5,21.1,,,,0,"LM1,3; RM2","1,3 LM; 2 RM",1,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,800,,Foraging on land up near SAT trail
+Rhinoclemmys funerea,26,new,25-Jan-14,41664,Yes,A,7,F,F,0,0,26.8,24.3,2825,6.2,3.4,0,"LM2,3; RM2","2,3 LM; 2 RM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,1408,,Hand captured in water
+Rhinoclemmys funerea,26,recap,30-Jan-14,41669,Yes,A,10,F,F,0,0,,,2750,,,0,"LM2,3; RM2","2,3 LM; 2 RM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,2026,,
+Rhinoclemmys funerea,27,new,28-Feb-14,41698,Yes,A,19,F,F,0,0,23.9,22.4,2200,5.9,2.8,1,"LM1,2,3; RM2","1,2,3 LM; 2 RM",0,"Quebrada Sura, stretch perpendicular to SAT 120",,,1444,,Swimming casually; missing back left foot.
+Rhinoclemmys funerea,30,new,28-Jan-14,41667,Yes,A,9,F,F,0,0,29.0,26.5,3380,6.0,2.9,0,"RM1,2","1,2 RM",0,Quebrada Sura stretch perpendicular from SAT 75,,,1355,,"Basking on sunny logs, dove in, captured by hand"
+Rhinoclemmys funerea,31,new,28-Jan-14,41667,Yes,A,9,M,M,0,1,23.5,21.1,1740,6.5,3.7,0,"LM1; RM1,2","1 LM; 1,2 RM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,NA,,Hand capture
+Rhinoclemmys funerea,31,recap,10-Feb-14,41680,Yes,A,14,M,M,0,1,,,,,,0,"LM1; RM1,2","1 LM; 1,2 RM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,1525,,
+Rhinoclemmys funerea,31,recap,16-Feb-14,41686,No,,,M,M,0,1,,,,,,0,"LM1; RM1,2","1 LM; 1,2 RM",0,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,2140,,Captured by hand along shoreline -- NOT DURING A STANDARDIZED SAMPLING SURVEY
+Rhinoclemmys funerea,32,new,30-Jan-14,41669,Yes,A,10,M,M,0,1,28.6,23.3,2750,8.9,5.3,0,"LM2; RM1,2","2 LM; 1,2 RM",0,,10.43203,-84.01755,,,
+Rhinoclemmys funerea,32,recap,26-May-14,41785,Yes,,,M,M,0,1,27.9,23.1,,9.2,6.1,0,"LM2; RM1,2","2 LM; 1,2 RM",1,"SAT 470, just before end spot",,,,,Raked out of leaf pack
+Rhinoclemmys funerea,32,recap,1-Oct-14,41913,Yes,,,M,M,0,1,27.8,23.1,,,,0,"LM2; RM1,2","2 LM; 1,2 RM",1,"SAT 470, just before end spot",,,,,
+Rhinoclemmys funerea,33,new,2-Feb-14,41672,Yes,A,11,M,M,0,1,27.4,23.3,2700,7.8,4.4,0,"LM1,2; RM1,2","1,2 LM; 1,2 RM",0,"Quebrada Surá, 50 m upstream from LOC bridge",,,1410,,"Casually swimming, captured by hand"
+Rhinoclemmys funerea,33,recap,23-May-14,41782,Yes,,,M,M,0,1,26.3,23.1,2800,,,0,"LM1,2; RM1,2","1,2 LM; 1,2 RM",1,"Quebrada Surá, 30 m downstream from Dipteryx tree",,,920,,Perched on shoreline
+Rhinoclemmys funerea,33,recap,12-Jun-15,42167,Yes,,,M,M,0,1,26.3,22.1,,,,,"LM1,2; RM1,2","1,2 LM; 1,2 RM",1,"Quebrada Surá, 30 m downstream from Dipteryx tree",,,1311,,Perched on shoreline
+Rhinoclemmys funerea,34,new,21-Feb-14,41691,Yes,A,16,M,M,0,1,24.4,21.5,1950,7.8,4.5,0,"LM3; RM1,2","3LM; 1,2 RM",0,Quebrada Surá at Honey Hole,10.43219,-84.01623,2054,,"Chilling in shallows near shore, captured by hand"
+Rhinoclemmys funerea,35,new,7-May-14,41766,No,,,M,M,0,1,30.0,25.7,,,,0,"LM1,3; RM1,2","1,3 LM; 1,2 RM",1,Quebrada Surá at Castilla elastica #1,10.43131,-84.01144,1300,,"Chilling in leaf litter of floodplain, 3 m south from CASELA #1 mark-recapture plot, 10 m from water"
+Rhinoclemmys funerea,36,new,8-May-14,41767,No,,,M,M,0,1,27.1,23.5,,8.5,5.1,0,"LM2,3; RM1,2","2,3 LM; 1,2 RM",1,Quebrada Surá at that nice Dipteryx,,,1200,,Swimming
+Rhinoclemmys funerea,37,new,23-May-14,41782,Yes,,,M,M,0,1,29.0,25.0,,9.0,5.1,0,"LM1,2,3; RM1,2","1,2,3 LM; 1,2 RM",1,Quebrada Surá at the Deep Hole near SAT 400,,,952,,"Basking on shoreline, grabbed in water"
+Rhinoclemmys funerea,40,new,25-Jan-14,41664,Yes,A,7,M,M,0,1,27.7,24.8,2970,8.1,4.9,0,RM3,3 RM,0,,10.43203,-84.01755,1440,,"Basking on bank, dove in, captured by hand"
+Rhinoclemmys funerea,41,new,25-Jan-14,41664,Yes,A,7,F,F,0,0,29.5,27.2,3535,,,0,LM1; RM3,1 LM; 3 RM,0,,10.43203,-84.01755,1440,5 ticks (Embolomura?),"Basking on bank, dove in, captured by hand"
+Rhinoclemmys funerea,42,new,26-Jan-14,41665,No,,,M,M,0,1,27.6,23.3,2850,8.5,5.4,0,LM2; RM3,2 LM; 3 RM,0,100 m downstream from Taconazo X Surá,,,1520,,"Swimming in water, hand captured"
+Rhinoclemmys funerea,43,new,26-Jan-14,41665,No,,,M,M,0,1,28.8,24.1,2925,7.9,4.6,0,"LM1,2; RM3","1,2 LM; 3 RM",0,,,,,,
+Rhinoclemmys funerea,44,new,21-May-14,41780,No,,,F,F,0,0,29.0,26.1,,6.4,3.2,0,LM3; RM3,3 LM; 3 RM,1,Quebrada Sura stretch perpendicular from SAT 345,10.43219,-84.01623,800,,Foraging on land up near SAT trail
+Rhinoclemmys funerea,45,new,23-May-14,41782,Yes,,,F,F,0,0,26.5,24.4,3200,,,0,"LM1,3; RM3","1,3 LM; 3 RM",1,Quebrada Sura 50 m upstream from the Deep Hole,,,1010,,Swimming then captured
+Rhinoclemmys funerea,45,recap,5-Sep-14,41887,Yes,,,F,F,0,0,26.7,24.5,3000,,,0,"LM1,3; RM3","1,3 LM; 3 RM",1,Quebrada Sura at Honey Hole SAT 345,10.43234,-84.0162,,,
+Rhinoclemmys funerea,45,recap,9-Sep-14,41891,Yes,,,F,F,0,0,26.6,24.5,2950,,,0,"LM1,3; RM3","1,3 LM; 3 RM",1,,10.43276,-84.01685,1210,,
+Rhinoclemmys funerea,46,new,5-Sep-14,41887,Yes,,,M,M,0,1,25.7,22.8,2350,,,0,"LM2,3; RM3","2,3 LM; 3 RM",1,Quebrada Sura at Honey Hole SAT 345,10.43234,-84.0162,,,
+Rhinoclemmys funerea,47,new,9-Sep-14,41891,Yes,,,F,F,0,0,25.2,23.4,2575,,,0,"LM1,2,3; RM3","1,2,3 LM; 3 RM",1,"Surá, 5 m downstream from LOC bridge",10.43336,-84.01395,1125,,COORDINATES FROM BRIDGE
+Rhinoclemmys funerea,100,new,2-Feb-14,41672,Yes,A,11,M,M,0,1,31.0,25.5,3875,8.1,4.7,0,LM12,12 LM,0,Quebrada Surá at the LOC bridge,10.43336,-84.01395,1250,,"Casually swimming, captured by hand"
+Rhinoclemmys funerea,100,recap,17-Jul-14,41837,No,,,M,M,0,1,30.8,25.4,,,,0,LM12,12 LM,0,Castilla elastica #3 study site,10.43248,-84.01205,1400,,Crawling around study plot
+Rhinoclemmys funerea,100,recap,1-Oct-14,41913,Yes,,,M,M,0,1,30.5,25.3,3950,,,0,LM12,12 LM,1,,10.43277,-84.01704,,,
+Rhinoclemmys funerea,101,new,3-Feb-14,41673,No,,,M,M,0,1,34.4,29.2,4700,10.7,6.6,0,"LM1,12","1,12 LM",0,"Quebrada Surá, 50 m downstream from LOC bridge",,,1505,,"Casually swimming, captured by hand"
+Rhinoclemmys funerea,102,new,3-Feb-14,41673,No,,,F,F,0,0,29.7,25.7,3400,6.6,2.9,0,"LM2,12","2,12 LM",0,"Quebrada Surá, 50 m downstream from LOC bridge",,,1517,,"Casually swimming, captured by hand"
+Rhinoclemmys funerea,103,new,8-Feb-14,41678,Yes,A,13,M,M,0,1,26.7,22.7,2600,,,0,"LM1,2,12","1,2,12 LM",0,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1350,,"Chilling in shallows near shore, captured by hand"
+Rhinoclemmys funerea,103,recap,23-May-14,41782,Yes,,,M,M,0,1,25.8,22.8,2550,,,0,"LM1,2,12","1,2,12 LM",1,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,938,,"Chilling in shallows near shore, captured by hand"
+Rhinoclemmys funerea,104,new,28-Feb-14,41698,Yes,A,19,M,M,0,1,27.7,25.0,2975,,,0,"LM3,12","3,12 LM",0,"Quebrada Sura, 40 m upstream from LOC bridge",,,1425,,"Casually swimming, captured by hand"
+Rhinoclemmys funerea,105,new,26-May-14,41785,No,,,F,F,0,0,26.3,24.4,,,,0,"LM1,3,12","1,3,12 LM",1,CES 600-700 approximate,,,1310,,Cruising across a ridgetop? Don't know what she was doing up here
+Rhinoclemmys funerea,106,new,26-May-14,41785,Yes,,,F,F,0,0,20.3,21.7,,4.8,2.3,0,"LM2,3,12","2,3,12 LM",1,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,,,
+Rhinoclemmys funerea,107,new,29-Sep-14,41911,Yes,,,J,JM,1,1,20.6,18.3,1300,6.3,3.8,0,"LM1,2,3,12","1,2,3,12 LM",1,End of transect,10.43211,-84.01786,1525,,
+Rhinoclemmys funerea,110,new,3-Feb-14,41673,Yes,A,12,M,M,0,1,31.6,27.9,4100,7.9,4.9,0,LM12; RM1,12 LM; 1 RM,0,Quebrada Surá at final area,10.43203,-84.01755,1601,"1 tick, posterior skin above tail","Casually swimming, captured by hand"
+Rhinoclemmys funerea,110,recap,8-Feb-14,41678,Yes,A,13,M,M,0,1,,,,,,0,LM12; RM1,12 LM; 1 RM,0,SAT 450,,,1625,,"Casually swimming, captured by hand"
+Rhinoclemmys funerea,110,recap,8-Sep-14,41890,Yes,,,M,M,0,1,31.2,27.8,4100,,,0,LM12; RM1,12 LM; 1 RM,1,,10.4329,-84.01697,1152,,
+Rhinoclemmys funerea,111,new,8-Feb-14,41678,Yes,A,13,M,M,0,1,24.4,21.2,2000,7.7,4.7,0,"LM1,12; RM1","1,12 LM; 1 RM",0,Quebrada Surá at final area,10.43203,-84.01755,1630,,"Casually swimming, captured by hand"
+Rhinoclemmys funerea,111,recap,1-Oct-14,41913,Yes,,,M,M,0,1,23.9,21.2,2025,,,0,"LM1,12; RM1","1,12 LM; 1 RM",1,Quebrada Surá at final area,10.43203,-84.01755,,,"PLASTRON STARTING TO BECOME CONCAVE, TAIL LONG == MALE"
+Rhinoclemmys funerea,112,new,10-Feb-14,41680,Yes,A,14,M,M,0,1,27.3,23.2,2650,,,0,"LM2,12; RM1","2,12 LM; 1 RM",0,Quebrada Surá at Honey Hole,10.43219,-84.01623,1525,,
+Rhinoclemmys funerea,112,recap,21-Feb-14,41691,Yes,A,16,M,M,0,1,,,,,,0,"LM2,12; RM1","2,12 LM; 1 RM",0,Quebrada Surá at Honey Hole,10.43219,-84.01623,2054,,"Chilling in shallows near shore, captured by hand"
+Rhinoclemmys funerea,112,recap,9-Sep-14,41891,Yes,,,M,M,0,1,26.4,23.2,2700,,,0,"LM2,12; RM1","2,12 LM; 1 RM",1,Quebrada Surá at Honey Hole,10.4323,-84.0164,1200,,Noodled from under a log
+Rhinoclemmys funerea,113,new,10-Feb-14,41680,Yes,A,14,M,M,0,1,25.4,22.8,,7.0,3.9,0,"LM1,2,12; RM1","1,2,12 LM; 1 RM",0,Quebrada Surá at Honey Hole,10.43219,-84.01623,1525,,
+Rhinoclemmys funerea,114,new,13-Nov-14,41956,Yes,,,J,JM,1,1,21.6,19.6,,6.8,3.6,0,"LM3,12; RM1","3,12 LM; 1 RM",1,Quebrada Surá at Honey Hole,10.43219,-84.01623,1610,,
+Rhinoclemmys funerea,115,new,13-Nov-14,41956,Yes,,,M,M,0,1,24.2,21.5,,7.5,4.4,0,"LM1,3,12; RM1","1,3,12 LM; 1 RM",1,Quebrada Surá at Honey Hole,10.43219,-84.01623,1610,,
+Rhinoclemmys funerea,116,new,13-Jun-15,42168,Yes,,,J,J,1,0,13.9,13.0,,,,0,"LM2,3,12; RM1","2,3,12 LM; 1 RM",1,Quebrada Surá at Honey Hole,10.43219,-84.01623,1630,,
+Rhinoclemmys funerea,120,new,20-Feb-14,41690,Yes,A,15,F,F,0,0,28.0,26.8,3400,,,0,LM12; RM2,12 LM; 2 RM,0,Quebrada Surá at Honey Hole,10.43219,-84.01623,1440,,Stub tail
+Rhinoclemmys funerea,121,new,24-Feb-14,41694,Yes,A,18,M,M,0,1,29.9,25.9,3500,,,0,"LM1,12; RM2","1,12 LM; 2 RM",0,20 m downstream from final area,,,1311,,Hiding in deep leaf litter muck in shallows near shore
+Rhinoclemmys funerea,121,recap,5-Sep-14,41887,Yes,,,M,M,0,1,29.2,25.5,3400,,,0,"LM1,12; RM2","1,12 LM; 2 RM",1,,10.43243,-84.01725,1557,,
+Rhinoclemmys funerea,121,recap,29-Sep-14,41911,Yes,,,M,M,0,1,29.1,25.5,3450,,,0,"LM1,12; RM2","1,12 LM; 2 RM",1,"Surá, 20 m upstream from deep hole",10.43274,-84.01685,,,
+Rhinoclemmys funerea,121,recap,30-Sep-14,41912,Yes,,,M,M,0,1,,,,,,0,"LM1,12; RM2","1,12 LM; 2 RM",1,Quebrada Surá at Honey Hole,10.43219,-84.01623,1423,,
+Rhinoclemmys funerea,122,new,28-Feb-14,41698,Yes,A,19,M,M,0,1,25.8,22.2,2400,,,0,"LM2,12; RM2","2,12 LM; 2 RM",0,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1444,,"Perched in shallows near shore, captured by hand"
+Rhinoclemmys funerea,200,new,10-Feb-14,41680,Yes,A,14,M,M,0,1,29.2,25.4,3100,,,0,LM11,11 LM,0,Deep hole upstream from Honey Hole,10.4326,-84.0168,,,
+Rhinoclemmys funerea,201,new,28-Feb-14,41698,Yes,A,19,F,F,0,0,28.2,26.6,3400,,,0,"LM1,11","1,11 LM",0,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1444,,"Perched in shallows near shore, captured by hand"
+Rhinoclemmys funerea,300,new,28-Feb-14,41698,Yes,A,19,M,M,0,1,29.8,25.8,3350,,,0,"LM11,12","11,12 LM",0,"Quebrada Sura, in deep hole n SAT 400 ",,,1524,,Casually swimming; noodled under a log
+Rhinoclemmys funerea,300,recap,29-Sep-14,41911,Yes,,,M,M,0,1,28.8,26.0,3350,,,0,"LM11,12","11,12 LM",1,"Surá, 20 m upstream from deep hole",10.43274,-84.01685,,,
+Rhinoclemmys funerea,300,recap,13-Jun-15,42168,Yes,,,M,M,0,1,28.9,26.0,,,,0,"LM11,12","11,12 LM",1,In between the two bends downstream from the Honey Hole,,,1624,,Swimming
+Rhinoclemmys funerea,303,new,13-Jun-15,42168,Yes,,,J,JF,1,0,20.6,19.0,,,,0,"LM1,2,11,12","1,2,11,12 LM",1,Honey Hole,10.43219,-84.01623,1630,,"Probably best to classify as juvenile; had a flat plastron, but maybe too small to develop concavity of plastron, so, probably best to classify as J"
+Rhinoclemmys funerea,1000,new,8-Feb-14,41678,Yes,A,13,M,M,0,1,26.6,23.3,2600,,,0,RM12,12 RM,0,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1350,,"Chilling in shallows near shore, captured by hand"
+Rhinoclemmys funerea,1000,recap,10-Sep-14,41892,Yes,,,M,M,0,1,26.2,23.2,2625,,,0,RM12,12 RM,1,,10.43273,-84.01506,1352,,
+Rhinoclemmys funerea,1000,recap,30-Sep-14,41912,Yes,,,M,M,0,1,26.2,23.2,2800,,,0,RM12,12 RM,1,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1423,,
+Rhinoclemmys funerea,4040,new,13-Jun-15,42168,Yes,,,J,J,1,0,14.5,13.3,,35.0,16.0,0,"RM4,10","4,10 RM",1,Quebrada Sura at Honey Hole SAT 345,10.43219,-84.01623,1423,,
+Rhinoclemmys funerea,12015,new,24-Feb-14,41694,Yes,A,18,M,M,0,1,26.6,23.3,,,,1,"LM1,2,3,4,8,9; RM7,8,9,10","1,2,3,4,8,9 LM; 7,8,9,10 RM",0,"Quebrada Surá, 20 m upstream from deep hole",,,1310,,"Casually swimming. Right back leg stump. Numerous shell notchings and deformities, stump tail, plastron with scattered pocketed deformities. Crocodilian attack? If I add up the marks on LM1-4,9-12 and RM1-4,9-12, the shell adds up to #12015"
+Chelydra acutirostris,,,12-Jun-15,42167,Yes,,,F,F,0,0,32.0,,,,,0,NA,NA,1,"Quebrada Surá, at little shitty wooden bridge",,,,,
