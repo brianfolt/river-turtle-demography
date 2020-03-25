@@ -57,9 +57,9 @@ inds = sort(as.numeric(as.character(levels(factor(studyarea$Number)))))
 surveys = sort(as.numeric(as.character(levels(factor(studyarea$Julian)))))
   # This does miss out on one survey, the last one, 
   # because no individuals were capture
-ch = matrix(NA, length(inds), length(surveys))
-rownames(ch) = inds
-colnames(ch) = surveys
+caphist = matrix(NA, length(inds), length(surveys))
+rownames(caphist) = inds
+colnames(caphist) = surveys
 
 # Mark-recapture histories will be saved state-specific,
 # where individuals observed each survey are specified as:
@@ -70,18 +70,18 @@ for (j in 1:length(inds)){
     survey = subset(ind, ind$Julian == surveys[k])
     # Specify J = 1, F = 2, M = 3, or NA for unsampled years
     if(surveys[k] %in% levels(as.factor(studyarea$Julian)) == FALSE) {
-      ch[j,k] = NA} else {
+      caphist[j,k] = NA} else {
         if(length(survey$Julian) > 0 && survey$AgeSex[1] == "J") {
-          ch[j,k] = 1} else {
+          caphist[j,k] = 1} else {
             if(length(survey$Julian) > 0 && survey$AgeSex[1] == "F") {
-              ch[j,k] = 2} else {
+              caphist[j,k] = 2} else {
                 if(length(survey$Julian) > 0 && survey$AgeSex[1] == "M") {
-                  ch[j,k] = 3} else {ch[j,k] = 0}}}}
+                  caphist[j,k] = 3} else {caphist[j,k] = 0}}}}
   }
 }
 
-ch # Capture histories by age-sex state!
-ch[ch > 0] = 1  # Change all states to 1
+caphist # Capture histories by age-sex state!
+caphist[caphist > 0] = 1  # Change all states to 1
 
 # Create a simple dataframe for group categories
 group = table(studyarea$Number, studyarea$AgeSex)
@@ -98,7 +98,7 @@ sex[sex == 0] = "M"
 ###### demographic features of the population
 library(assertr)
 
-df = unname(col_concat(ch, ""))
+df = unname(col_concat(caphist, ""))
 ch = data.frame(cbind(df,sex), stringsAsFactors=FALSE)
 colnames(ch) = c("ch","sex")
 ch[,2] = as.factor(sex)
@@ -146,11 +146,17 @@ summary(mod8) # Second-best model
 summary(mod7) # Second-best model
 
 # Top model results
-str(mod2)
+summary(mod2)
+mod2$results$real[1:4,]
+mod2$results$derived$`N Population Size`
+mod2$results$derived$`Gross N* Population Size`
 
-mod2$results
 
-
+popsize = popan.derived(turtles.popan, models)
+str(popsize)
+surveys2 = c(surveys,surveys)
+abundance = cbind(popsize$N,surveys2)
+write.csv(abundance, "DerivedAbundance.csv")
 
 
 
