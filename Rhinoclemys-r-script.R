@@ -87,16 +87,40 @@ group[group > 0] = 1
 ###### Mark-recapture analysis
 ###### Build simple mark-recapture models to understand
 ###### demographic features of the population
-library(marked)
 library(assertr)
 
-df = unname(col_concat(ch, ""))
-ch = cbind(df,group)
-colnames(ch) = c("ch","F","J","M")
+# df = unname(col_concat(ch, ""))
+# ch = cbind(df,group)
+# colnames(ch) = c("ch","F","J","M")
 
-?crm()
+# Use package Rcapture to build open population models
+library(Rcapture)
 
-mod = crm()
+colnames(ch) = c("c11","c12","c13","c14","c15","c16","c17","c18","c19","c10",
+                 "c111","c112","c113","c114","c115","c116","c117","c118","c119",
+                 "c21","c22","c31","c32","c33","c34","c35","c36","c37","c38",
+                 "c41","c51","c52","c53")
+t = 33
+vt = c(19,2,8,1,3)
+
+res = robustd.t(ch, dfreq=FALSE, vt, vm="M0", vh="Poisson", vtheta=1.5)
+
+
+
+
+
+
+
+#not run :
+  robustd.0(mvole[, -10], vt = c(5, 4, rep(5, 4)), vm = "Mh", vh = "Poisson", vtheta = 1.5)
+  # Should take a few seconds to run.
+  # Not run:
+  robustd.t(mvole[, -10], vt = c(5, 4, rep(5, 4)), vm = 'Mh', vh = 'Poisson', vtheta = 1.5)
+  # Should fail.
+  # Considering only the first 3 periods of the data set, we can use the
+  # robustd.t function to fit a model with a temporal effect.
+  robustd.t(mvole[, c(1:9, 11:15)], vt = c(5, 4, 5), vm = "Mth", vh = "Poisson", vtheta = 1.5)
+
 
 
 
