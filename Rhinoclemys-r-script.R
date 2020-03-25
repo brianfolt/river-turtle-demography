@@ -9,15 +9,21 @@ rm(list=ls())
 
 # Set the working directory
 setwd("/Users/Brian/Dropbox/La Selva Turtles/Rhinoclemmys funerea project/GitHub")
+setwd("C:/Users/bpf0006/Desktop/river-turtle-demography")
+
 
 # Load the table
 datum = read.csv("captures.csv", header = TRUE)
 head(datum)
-str(datum)
+colnames(datum)[1] = "Species"
+str(datum$Species)
 
-# Remove Chelydra acutirostris from dataset
-datum = droplevels(subset(datum, datum$Species == "Rhinoclemmys funerea"))
+# Remove Chelydra acutirostris and juvenile R. funerea dataset
+datum = droplevels(subset(datum, datum$Species == "Rhinoclemmys funerea"))#remove Chelydra
+datum = droplevels(subset(datum, datum$Juvenile != 1))#remove J
 str(datum)
+head(datum)
+
 
 ###### Part I --
 ###### Summarize the capture-mark recapture data
@@ -81,6 +87,9 @@ ch[ch > 0] = 1  # Change all states to 1
 group = table(studyarea$Number, studyarea$AgeSex)
 group[group > 0] = 1
 
+sex = group[,1]
+sex[sex == 1] = "F"
+sex[sex == 0] = "M"
 
 
 ###### Part II -- 
@@ -89,37 +98,59 @@ group[group > 0] = 1
 ###### demographic features of the population
 library(assertr)
 
-# df = unname(col_concat(ch, ""))
-# ch = cbind(df,group)
-# colnames(ch) = c("ch","F","J","M")
+df = unname(col_concat(ch, ""))
+ch = data.frame(cbind(df,sex), stringsAsFactors=FALSE)
+colnames(ch) = c("ch","sex")
+ch[,2] = as.factor(sex)
 
-# Use package Rcapture to build open population models
-library(Rcapture)
-
-colnames(ch) = c("c11","c12","c13","c14","c15","c16","c17","c18","c19","c10",
-                 "c111","c112","c113","c114","c115","c116","c117","c118","c119",
-                 "c21","c22","c31","c32","c33","c34","c35","c36","c37","c38",
-                 "c41","c51","c52","c53")
-t = 33
-vt = c(19,2,8,1,3)
-
-res = robustd.t(ch, dfreq=FALSE, vt, vm="M0", vh="Poisson", vtheta=1.5)
+# Use package RMark to build open population models
+library(RMark)
 
 
+# Specify the time interval between samples
+t.int = c(2,1,1,2,3,1,1,2,2,3,1,5,2,10,1,2,1,4,84,3,93,9,3,1,1,19,1,1,43,210,1,1)
+t.int = t.int/365
+
+# Process the data
+turtles.popan = process.data(data=ch, model="POPAN", groups=c("sex"), time.intervals=t.int)
+
+# Run RELEASE goodness-of-fit tests
+release.gof(turtles.popan)
+
+# Fit a complete model set of all parameters varying (or not) by sex
+mod1 = mark(turtles.popan) # null model
+mod2 = mark(turtles.popan, model.parameters=list(Phi=list(formula=~sex)))
+mod3 = mark(turtles.popan, model.parameters=list(p=list(formula=~sex)))
+mod4 = mark(turtles.popan, model.parameters=list(pent=list(formula=~sex)))
+mod5 = mark(turtles.popan, model.parameters=list(N=list(formula=~sex)))
+mod6 = mark(turtles.popan, model.parameters=list(Phi=list(formula=~sex),p=list(formula=~sex)))
+mod7 = mark(turtles.popan, model.parameters=list(Phi=list(formula=~sex),pent=list(formula=~sex)))
+mod8 = mark(turtles.popan, model.parameters=list(Phi=list(formula=~sex),N=list(formula=~sex)))
+mod9 = mark(turtles.popan, model.parameters=list(p=list(formula=~sex),pent=list(formula=~sex)))
+mod10 = mark(turtles.popan, model.parameters=list(p=list(formula=~sex),N=list(formula=~sex)))
+mod11 = mark(turtles.popan, model.parameters=list(pent=list(formula=~sex),N=list(formula=~sex)))
+mod12 = mark(turtles.popan, model.parameters=list(Phi=list(formula=~sex),p=list(formula=~sex),pent=list(formula=~sex)))
+mod13 = mark(turtles.popan, model.parameters=list(Phi=list(formula=~sex),p=list(formula=~sex),N=list(formula=~sex)))
+mod14 = mark(turtles.popan, model.parameters=list(Phi=list(formula=~sex),pent=list(formula=~sex),N=list(formula=~sex)))
+mod15 = mark(turtles.popan, model.parameters=list(p=list(formula=~sex),pent=list(formula=~sex),N=list(formula=~sex)))
+mod16 = mark(turtles.popan, model.parameters=list(Phi=list(formula=~sex),p=list(formula=~sex),pent=list(formula=~sex),N=list(formula=~sex)))
+
+(models = collect.models(type="POPAN"))
+  ## In looking at the data and the results, female survival is strikingly low. 
+  ## I think this reflects a stochastic ~outlier result where when I sampled
+  ## in June 2015, zero females were captured in the study area. 
+
+summary(mod2) # Top model
+summary(mod6) # Second-best model
+summary(mod8) # Second-best model
+summary(mod7) # Second-best model
+
+# Top model results
+str(mod2)
+
+mod2$results
 
 
-
-
-
-#not run :
-  robustd.0(mvole[, -10], vt = c(5, 4, rep(5, 4)), vm = "Mh", vh = "Poisson", vtheta = 1.5)
-  # Should take a few seconds to run.
-  # Not run:
-  robustd.t(mvole[, -10], vt = c(5, 4, rep(5, 4)), vm = 'Mh', vh = 'Poisson', vtheta = 1.5)
-  # Should fail.
-  # Considering only the first 3 periods of the data set, we can use the
-  # robustd.t function to fit a model with a temporal effect.
-  robustd.t(mvole[, c(1:9, 11:15)], vt = c(5, 4, 5), vm = "Mth", vh = "Poisson", vtheta = 1.5)
 
 
 
