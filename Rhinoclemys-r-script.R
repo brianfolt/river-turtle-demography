@@ -75,13 +75,32 @@ for (j in 1:length(inds)){
 }
 
 ch # Capture histories by age-sex state!
+ch[ch > 0] = 1  # Change all states to 1
 
-
-
+# Create a simple dataframe for group categories
+group = table(studyarea$Number, studyarea$AgeSex)
+group[group > 0] = 1
 
 
 
 ###### Part II -- 
+###### Mark-recapture analysis
+###### Build simple mark-recapture models to understand
+###### demographic features of the population
+library(marked)
+library(assertr)
+
+df = unname(col_concat(ch, ""))
+ch = cbind(df,group)
+colnames(ch) = c("ch","F","J","M")
+
+?crm()
+
+mod = crm()
+
+
+
+###### Part III -- 
 ###### Morphometric analysis
 ###### Perform a series of morphometric analyses to explore 
 ###### morphological variation between the sexes
