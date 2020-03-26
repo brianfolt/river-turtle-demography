@@ -49,6 +49,9 @@ recaptured = summary(as.factor(studyarea$Number)) > 1
 # Range of captures per individuals
 range(summary(as.factor(studyarea$Number)))
 
+### Look at behavior of turtles
+summary(droplevels(subset(datum, datum$Behavior != ""))$Behavior)
+
 
 ## Create mark-recapture histories for individuals in the study area
 
@@ -167,6 +170,10 @@ topmod = readRDS("POPAN-model-top.rds")
 secondmod = readRDS("POPAN-model-second.rds")
 thirdmod = readRDS("POPAN-model-third.rds")
 fourthmod = readRDS("POPAN-model-fourth.rds")
+
+# Look at secondary model parameter estimates
+secondmod$results$real[1:4,]
+
 
 
 
