@@ -106,7 +106,6 @@ ch[,2] = as.factor(sex)
 # Use package RMark to build open population models
 library(RMark)
 
-
 # Specify the time interval between samples
 t.int = c(2,1,1,2,3,1,1,2,2,3,1,5,2,10,1,2,1,4,84,3,93,9,3,1,1,19,1,1,43,210,1,1)
 t.int = t.int/365
