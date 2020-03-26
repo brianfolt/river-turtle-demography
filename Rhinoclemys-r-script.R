@@ -157,6 +157,12 @@ surveys2 = c(surveys,surveys)
 abundance = cbind(popsize$N,surveys2)
 write.csv(abundance, "DerivedAbundance.csv")
 
+### Save top-models and model table to GitHub page
+saveRDS(mod2, "POPAN-model-top.rds")
+saveRDS(mod6, "POPAN-model-second.rds")
+saveRDS(mod8, "POPAN-model-third.rds")
+saveRDS(mod7, "POPAN-model-fourth.rds")
+
 
 
 
