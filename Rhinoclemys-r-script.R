@@ -163,6 +163,10 @@ saveRDS(mod6, "POPAN-model-second.rds")
 saveRDS(mod8, "POPAN-model-third.rds")
 saveRDS(mod7, "POPAN-model-fourth.rds")
 
+topmod = readRDS("POPAN-model-top.rds")
+secondmod = readRDS("POPAN-model-second.rds")
+thirdmod = readRDS("POPAN-model-third.rds")
+fourthmod = readRDS("POPAN-model-fourth.rds")
 
 
 
@@ -184,26 +188,34 @@ morph <- subset(datum, datum$Status!="recap") #remove recaptures
 head(morph)
 morph
 
-males <- subset(morph, morph$Sex=="M"); females <- subset(morph, morph$Sex=="F")
+# Create objects for each sex
+males <- subset(morph, morph$AgeSex=="M"); females <- subset(morph, morph$AgeSex=="F")
 
 ##### Do males and females differ in body size?
 
 # Box-and-whiskers plots of adult males and females
-plot(morph$Sex, morph$logCL, ylab="Carapace length (cm)", xlab="Sex")
+plot(morph$AgeSex, morph$CL, ylab="Carapace length (cm)", xlab="Sex")
 
 # Test for assumptions of parametric statistics
 shapiro.test(males$CL)		#male carapace length is normal
 shapiro.test(females$CL)	#female carapace length is normal
-levene.test(morph$CL, morph$Sex)	#homoscedasticity is OK
+levene.test(morph$CL, morph$AgeSex)	#homoscedasticity is OK
 
 # Compare CL of adult males & females with a t-test
-adults = droplevels(subset(morph, morph$Sex != "J"))
-adults = droplevels(subset(adults, adults$Sex != "JF"))
-adults = droplevels(subset(adults, adults$Sex != "JM"))
+adults = droplevels(subset(morph, morph$AgeSex != "J"))
+adults = droplevels(subset(adults, adults$AgeSex != "JF"))
+adults = droplevels(subset(adults, adults$AgeSex != "JM"))
 
-(res <- lm(CL ~ Sex, data=adults))
-summary(res)
-confint(res)
+(res <- lm(CL ~ AgeSex, data=adults))
+summary(res); confint(res)
+
+# Mean female size, LCL, UCL
+res$coefficients[1]; confint(res)[1,1]; confint(res)[1,2]
+
+# Mean male size, LCL, UCL
+res$coefficients[1] + res$coefficients[2] # Male size
+res$coefficients[1] + res$coefficients[2] + confint(res)[2,1] # Male LCL
+res$coefficients[1] + res$coefficients[2] + confint(res)[2,2] # Male UCL
   ### Adult males and females do not differe in maximum carapace length
   ### this confirms suggestions in the literature (Savage 2002) 
 
@@ -235,6 +247,18 @@ anova(res3,res2)
 summary(res2)
 confint(res2)
 
+
+###### Does CL-PL relationship vary between sexes?
+CLPLmod <- lm(PL ~ CL + Male + CL:Male, data=adults)
+summary(CLPLmod)
+# interaction non-significant; drop and rebuild model
+
+CLPLmod2 <- lm(PL ~ CL + Male, data=adults)
+summary(CLPLmod2)
+confint(CLPLmod2)
+# all variable significant; additive effect of sex on PL-CL relationship
+
+
 ##### Does tail length vary between sexes?
 tailres <- lm(TL ~ CL*Male, data=adults)
 summary(tailres)
@@ -246,6 +270,7 @@ confint(tailres2)
   # Males have longer tails than females, 
   # but no interaction between length*sex
 
+
 ###### Does plastron-vent distance vary between sexes?
 pvmod <- lm(PV ~ CL*Male, data=adults)
 summary(pvmod)
@@ -256,14 +281,6 @@ summary(pvmod2)
 confint(pvmod2)
   # The vent is proportionally farther down the tail in males than females
 
-###### Does CL-PL relationship vary between sexes?
-CLPLmod <- lm(PL ~ CL + Male + CL:Male, data=adults)
-summary(CLPLmod)
-  # interaction non-significant; drop and rebuild model
-
-CLPLmod2 <- lm(PL ~ CL + Male, data=adults)
-summary(CLPLmod2)
-  # all variable significant; additive effect of sex on PL-CL relationship
 
 
 ###### Part II -- 
