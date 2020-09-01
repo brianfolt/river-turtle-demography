@@ -94,6 +94,18 @@ sex = group[,1]
 sex[sex == 1] = "F"
 sex[sex == 0] = "M"
 
+# Summarize number of captures for each individual
+noCaps = matrix(,length(caphist[,1]),)
+for (i in 1:length(caphist[,1])){
+  noCaps[i] = sum(caphist[i,])
+}
+noCaps
+
+plot(noCaps ~ as.factor(sex))
+
+# Chi-squared test of observed sex ratio 
+chisq.test(matrix(c(21,38),2,1))
+
 
 ###### Part II -- 
 ###### Mark-recapture analysis
@@ -216,14 +228,20 @@ adults = droplevels(subset(adults, adults$AgeSex != "JM"))
 (res <- lm(CL ~ AgeSex, data=adults))
 summary(res); confint(res)
 
-# Mean female size, LCL, UCL
+# Mean female size, LCL, UCL, SE
 res$coefficients[1]; confint(res)[1,1]; confint(res)[1,2]
+summary(res)$coefficients[1,2] # SE
+range(subset(adults, adults$AgeSex == "F")$CL) # Range
+length(subset(adults, adults$AgeSex == "F")$CL) #Sample size
 
 # Mean male size, LCL, UCL
 res$coefficients[1] + res$coefficients[2] # Male size
+summary(res)$coefficients[2,2] # SE
 res$coefficients[1] + res$coefficients[2] + confint(res)[2,1] # Male LCL
 res$coefficients[1] + res$coefficients[2] + confint(res)[2,2] # Male UCL
-  ### Adult males and females do not differe in maximum carapace length
+range(subset(adults, adults$AgeSex == "M")$CL) # Range
+length(subset(adults, adults$AgeSex == "M")$CL) #Sample size
+### Adult males and females do not differ in maximum carapace length
   ### this confirms suggestions in the literature (Savage 2002) 
 
 
