@@ -51,6 +51,7 @@ range(summary(as.factor(studyarea$Number)))
 
 ### Look at behavior of turtles
 summary(droplevels(subset(datum, datum$Behavior != ""))$Behavior)
+table(droplevels(subset(datum, datum$Behavior != ""))$Behavior)
 
 
 ## Create mark-recapture histories for individuals in the study area
@@ -176,8 +177,54 @@ secondmod$results$real[1:4,]
 
 
 
-
 ###### Part III -- 
+###### Simple home range size analysis
+###### Compare observed home ranges along the stream 
+###### between the sexes
+
+# Load the home range data
+hr = read.csv("space-use.csv", header=TRUE)
+head(hr)
+
+# Remove a juvenile
+hr = droplevels(subset(hr, hr$ReproSex != "J"))
+
+# Summarize maximum observed home range size by sex
+model = glm(hr$Distance_m ~ hr$ReproSex, family="poisson")
+summary(model)
+confint(model)
+
+# Translate estimates back to reality from log-link function
+exp(summary(model)$coefficients[1,1]) # Female mean
+exp(summary(model)$coefficients[1,2]) # Female SE
+exp(confint(model)[1,1]) # Female lower CI
+exp(confint(model)[1,2]) # Female lower CI
+length(subset(hr, hr$ReproSex=="F")$Distance_m)
+
+exp(summary(model)$coefficients[1,1] + summary(model)$coefficients[2,1]) # Male mean
+exp(summary(model)$coefficients[1,2] + summary(model)$coefficients[2,2]) # Male SE
+exp(confint(model)[1,1] + confint(model)[2,1]) # Male lower CI
+exp(confint(model)[1,2] + confint(model)[2,2]) # Male upper CI
+length(subset(hr, hr$ReproSex=="M")$Distance_m)
+
+
+# Compare home-range sizes by sex using non-parametrix Wilcoxon tests
+res = wilcox.test(subset(hr, hr$ReproSex=="F")$Distance_m, subset(hr, hr$ReproSex=="M")$Distance_m, alternative="less")
+res
+  # Males have larger homerange sizes than females, but this 
+  # result was not statistically significant P = 0.156
+
+# remove zeroes
+hr0 = droplevels(subset(hr, hr$Distance_m != 0))
+
+# compare home-range sizes by sex again, this time without zeroes
+res = wilcox.test(subset(hr0, hr$ReproSex=="F")$Distance_m, subset(hr0, hr$ReproSex=="M")$Distance_m, alternative="less")
+res
+  # With zeroes removed, this analysis supports males having
+  # significantly larger home range sizes than females (P = 0.002)
+
+
+###### Part IV -- 
 ###### Morphometric analysis
 ###### Perform a series of morphometric analyses to explore 
 ###### morphological variation between the sexes
