@@ -1,0 +1,2329 @@
+
+   Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  001
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+      Documentation for this program is available as Part 9 of the mongraph:
+      Burnham, K.P., D.R. Anderson, G.C. White, C. Brownie, and K.H. Pollock.
+      1987.  Design and analysis methods for fish survival experiments based
+      on release-recapture.  Am. Fisheries Soc. Monograph 5.
+
+
+      Modifications for this version:
+      March, 1988  Fixed a bug in reading a capture history matrix
+                   from a file during interactive input.
+      March, 1988  Modified "S u m m a r y   b y   L o t s" output
+                   to provide standard errors and use t statistic for CI.
+      May, 1989    Modified Chi-square tests to provide power of
+                   test with EXPECT option on PROCs SIMULATE and CHISQ.
+      May, 1989    Added GTEST option to PROCS to provide likelihood
+                   ratio G tests instead of Pearson chi-square tests.
+      Aug, 1991    Added Akaike's Information Criterion Calculation
+      May, 1992    Added AICFILE and GOFFILE options to SIMULATE
+      May, 1992    Added EBV parameter (Extended Binomial Var.) to SIMULATE
+      May, 1992    Capture histories converted from INTEGER to REAL
+      May, 1992    NOBINCOEF option in SIMULATE to remove mult. coef. from Like.
+      May, 1992    AICMEAN option in SIMULATE for true parameter values.
+      Dec, 1993    FPOOL option to use Fisher Exact P-values in summary tests.
+
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  002
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+
+  INPUT --- proc title  Release-gof ;
+
+     Time in seconds for last procedure was 0.00
+
+ * *  WARNING  * *   Value of LOTS defaults to 1 
+
+
+  INPUT --- proc chmatrix occasions= 7  groups= 2  FPool;
+
+  INPUT ---    glabel(1)=sexFemale;
+
+  INPUT ---    glabel(2)=sexMale;
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  003
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  1 0  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+             The following capture history is a duplicate of number 1 above.
+  INPUT ---       0000001  0 1  ;
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  004
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+  INPUT ---       0000010  1 0  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  1 0  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  1 0  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  1 0  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  1 0  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  1 0  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  1 0  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  1 0  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  1 0  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  1 0  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  1 0  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  1 0  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  0 1  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  0 1  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  0 1  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  0 1  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  0 1  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  0 1  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  0 1  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  0 1  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  0 1  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  0 1  ;
+             The following capture history is a duplicate of number 2 above.
+  INPUT ---       0000010  0 1  ;
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  005
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+  INPUT ---       0000011  1 0  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  1 0  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  1 0  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  1 0  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  1 0  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  1 0  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  1 0  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  1 0  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  1 0  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  1 0  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  1 0  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  0 1  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  0 1  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  0 1  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  0 1  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  0 1  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  0 1  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  0 1  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  0 1  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  0 1  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  0 1  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  0 1  ;
+             The following capture history is a duplicate of number 3 above.
+  INPUT ---       0000011  0 1  ;
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  006
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+  INPUT ---       0000100  1 0  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  1 0  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  1 0  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  1 0  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  1 0  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  1 0  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  1 0  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  0 1  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  0 1  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  0 1  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  0 1  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  0 1  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  0 1  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  0 1  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  0 1  ;
+             The following capture history is a duplicate of number 4 above.
+  INPUT ---       0000100  0 1  ;
+  INPUT ---       0000110  1 0  ;
+             The following capture history is a duplicate of number 5 above.
+  INPUT ---       0000110  1 0  ;
+             The following capture history is a duplicate of number 5 above.
+  INPUT ---       0000110  1 0  ;
+             The following capture history is a duplicate of number 5 above.
+  INPUT ---       0000110  1 0  ;
+             The following capture history is a duplicate of number 5 above.
+  INPUT ---       0000110  1 0  ;
+             The following capture history is a duplicate of number 5 above.
+  INPUT ---       0000110  1 0  ;
+             The following capture history is a duplicate of number 5 above.
+  INPUT ---       0000110  0 1  ;
+             The following capture history is a duplicate of number 5 above.
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  007
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+  INPUT ---       0000110  0 1  ;
+             The following capture history is a duplicate of number 5 above.
+  INPUT ---       0000110  0 1  ;
+  INPUT ---       0000111  1 0  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  1 0  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  1 0  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  1 0  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  1 0  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  1 0  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  0 1  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  0 1  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  0 1  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  0 1  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  0 1  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  0 1  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  0 1  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  0 1  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  0 1  ;
+             The following capture history is a duplicate of number 6 above.
+  INPUT ---       0000111  0 1  ;
+  INPUT ---       0001000  1 0  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  1 0  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  1 0  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  1 0  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  1 0  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  1 0  ;
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  008
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  1 0  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  1 0  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  1 0  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  1 0  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  0 1  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  0 1  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  0 1  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  0 1  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  0 1  ;
+             The following capture history is a duplicate of number 7 above.
+  INPUT ---       0001000  0 1  ;
+  INPUT ---       0001001  1 0  ;
+             The following capture history is a duplicate of number 8 above.
+  INPUT ---       0001001  0 1  ;
+  INPUT ---       0001011  1 0  ;
+  INPUT ---       0001100  1 0  ;
+             The following capture history is a duplicate of number 10 above.
+  INPUT ---       0001100  1 0  ;
+             The following capture history is a duplicate of number 10 above.
+  INPUT ---       0001100  1 0  ;
+             The following capture history is a duplicate of number 10 above.
+  INPUT ---       0001100  1 0  ;
+             The following capture history is a duplicate of number 10 above.
+  INPUT ---       0001100  1 0  ;
+             The following capture history is a duplicate of number 10 above.
+  INPUT ---       0001100  0 1  ;
+             The following capture history is a duplicate of number 10 above.
+  INPUT ---       0001100  0 1  ;
+             The following capture history is a duplicate of number 10 above.
+  INPUT ---       0001100  0 1  ;
+             The following capture history is a duplicate of number 10 above.
+  INPUT ---       0001100  0 1  ;
+             The following capture history is a duplicate of number 10 above.
+  INPUT ---       0001100  0 1  ;
+             The following capture history is a duplicate of number 10 above.
+  INPUT ---       0001100  0 1  ;
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  009
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+  INPUT ---       0001110  1 0  ;
+             The following capture history is a duplicate of number 11 above.
+  INPUT ---       0001110  1 0  ;
+             The following capture history is a duplicate of number 11 above.
+  INPUT ---       0001110  1 0  ;
+             The following capture history is a duplicate of number 11 above.
+  INPUT ---       0001110  1 0  ;
+             The following capture history is a duplicate of number 11 above.
+  INPUT ---       0001110  0 1  ;
+             The following capture history is a duplicate of number 11 above.
+  INPUT ---       0001110  0 1  ;
+             The following capture history is a duplicate of number 11 above.
+  INPUT ---       0001110  0 1  ;
+  INPUT ---       0001111  1 0  ;
+             The following capture history is a duplicate of number 12 above.
+  INPUT ---       0001111  1 0  ;
+             The following capture history is a duplicate of number 12 above.
+  INPUT ---       0001111  0 1  ;
+             The following capture history is a duplicate of number 12 above.
+  INPUT ---       0001111  0 1  ;
+             The following capture history is a duplicate of number 12 above.
+  INPUT ---       0001111  0 1  ;
+             The following capture history is a duplicate of number 12 above.
+  INPUT ---       0001111  0 1  ;
+             The following capture history is a duplicate of number 12 above.
+  INPUT ---       0001111  0 1  ;
+             The following capture history is a duplicate of number 12 above.
+  INPUT ---       0001111  0 1  ;
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  010
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  1 0  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  0 1  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  0 1  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  0 1  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  0 1  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  0 1  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  0 1  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  0 1  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  0 1  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  0 1  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  0 1  ;
+             The following capture history is a duplicate of number 13 above.
+  INPUT ---       0010000  0 1  ;
+  INPUT ---       0010110  0 1  ;
+  INPUT ---       0011000  1 0  ;
+             The following capture history is a duplicate of number 15 above.
+  INPUT ---       0011000  1 0  ;
+             The following capture history is a duplicate of number 15 above.
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  011
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+  INPUT ---       0011000  1 0  ;
+             The following capture history is a duplicate of number 15 above.
+  INPUT ---       0011000  1 0  ;
+             The following capture history is a duplicate of number 15 above.
+  INPUT ---       0011000  0 1  ;
+             The following capture history is a duplicate of number 15 above.
+  INPUT ---       0011000  0 1  ;
+             The following capture history is a duplicate of number 15 above.
+  INPUT ---       0011000  0 1  ;
+             The following capture history is a duplicate of number 15 above.
+  INPUT ---       0011000  0 1  ;
+             The following capture history is a duplicate of number 15 above.
+  INPUT ---       0011000  0 1  ;
+             The following capture history is a duplicate of number 15 above.
+  INPUT ---       0011000  0 1  ;
+             The following capture history is a duplicate of number 15 above.
+  INPUT ---       0011000  0 1  ;
+             The following capture history is a duplicate of number 15 above.
+  INPUT ---       0011000  0 1  ;
+  INPUT ---       0011100  1 0  ;
+             The following capture history is a duplicate of number 16 above.
+  INPUT ---       0011100  1 0  ;
+             The following capture history is a duplicate of number 16 above.
+  INPUT ---       0011100  0 1  ;
+             The following capture history is a duplicate of number 16 above.
+  INPUT ---       0011100  0 1  ;
+             The following capture history is a duplicate of number 16 above.
+  INPUT ---       0011100  0 1  ;
+             The following capture history is a duplicate of number 16 above.
+  INPUT ---       0011100  0 1  ;
+  INPUT ---       0011110  1 0  ;
+             The following capture history is a duplicate of number 17 above.
+  INPUT ---       0011110  0 1  ;
+  INPUT ---       0011111  1 0  ;
+             The following capture history is a duplicate of number 18 above.
+  INPUT ---       0011111  1 0  ;
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  012
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  1 0  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  0 1  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  0 1  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  0 1  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  0 1  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  0 1  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  0 1  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  0 1  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  0 1  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  0 1  ;
+             The following capture history is a duplicate of number 19 above.
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  013
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+  INPUT ---       0100000  0 1  ;
+             The following capture history is a duplicate of number 19 above.
+  INPUT ---       0100000  0 1  ;
+  INPUT ---       0110000  1 0  ;
+             The following capture history is a duplicate of number 20 above.
+  INPUT ---       0110000  1 0  ;
+             The following capture history is a duplicate of number 20 above.
+  INPUT ---       0110000  1 0  ;
+             The following capture history is a duplicate of number 20 above.
+  INPUT ---       0110000  1 0  ;
+             The following capture history is a duplicate of number 20 above.
+  INPUT ---       0110000  0 1  ;
+             The following capture history is a duplicate of number 20 above.
+  INPUT ---       0110000  0 1  ;
+             The following capture history is a duplicate of number 20 above.
+  INPUT ---       0110000  0 1  ;
+             The following capture history is a duplicate of number 20 above.
+  INPUT ---       0110000  0 1  ;
+             The following capture history is a duplicate of number 20 above.
+  INPUT ---       0110000  0 1  ;
+             The following capture history is a duplicate of number 20 above.
+  INPUT ---       0110000  0 1  ;
+             The following capture history is a duplicate of number 20 above.
+  INPUT ---       0110000  0 1  ;
+  INPUT ---       0110110  1 0  ;
+  INPUT ---       0111000  1 0  ;
+             The following capture history is a duplicate of number 22 above.
+  INPUT ---       0111000  0 1  ;
+  INPUT ---       0111100  1 0  ;
+             The following capture history is a duplicate of number 23 above.
+  INPUT ---       0111100  1 0  ;
+             The following capture history is a duplicate of number 23 above.
+  INPUT ---       0111100  0 1  ;
+  INPUT ---       0111110  1 0  ;
+  INPUT ---       0111111  1 0  ;
+             The following capture history is a duplicate of number 25 above.
+  INPUT ---       0111111  1 0  ;
+  INPUT ---       1000000  1 0  ;
+             The following capture history is a duplicate of number 26 above.
+  INPUT ---       1000000  1 0  ;
+             The following capture history is a duplicate of number 26 above.
+  INPUT ---       1000000  1 0  ;
+             The following capture history is a duplicate of number 26 above.
+  INPUT ---       1000000  1 0  ;
+             The following capture history is a duplicate of number 26 above.
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  014
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+  INPUT ---       1000000  0 1  ;
+             The following capture history is a duplicate of number 26 above.
+  INPUT ---       1000000  0 1  ;
+             The following capture history is a duplicate of number 26 above.
+  INPUT ---       1000000  0 1  ;
+             The following capture history is a duplicate of number 26 above.
+  INPUT ---       1000000  0 1  ;
+             The following capture history is a duplicate of number 26 above.
+  INPUT ---       1000000  0 1  ;
+  INPUT ---       1010000  1 0  ;
+             The following capture history is a duplicate of number 27 above.
+  INPUT ---       1010000  0 1  ;
+  INPUT ---       1100000  1 0  ;
+             The following capture history is a duplicate of number 28 above.
+  INPUT ---       1100000  1 0  ;
+             The following capture history is a duplicate of number 28 above.
+  INPUT ---       1100000  0 1  ;
+             The following capture history is a duplicate of number 28 above.
+  INPUT ---       1100000  0 1  ;
+             The following capture history is a duplicate of number 28 above.
+  INPUT ---       1100000  0 1  ;
+             The following capture history is a duplicate of number 28 above.
+  INPUT ---       1100000  0 1  ;
+  INPUT ---       1101110  1 0  ;
+  INPUT ---       1111000  1 0  ;
+             The following capture history is a duplicate of number 30 above.
+  INPUT ---       1111000  0 1  ;
+  INPUT ---       1111100  1 0  ;
+  INPUT ---       1111110  0 1  ;
+
+ * *  WARNING  * *   At least a pair of the capture histories are duplicates. 
+
+      Number of capture histories read was  32
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  015
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+                        Observed Recaptures for Group 1
+                                   sexFemale
+
+             i   R(i)                     m(i,j)                    r(i) 
+                        j=  2      3      4      5      6      7
+             1     10       5      1      0      0      0      0       6
+             2     34             13      1      0      0      0      14
+             3     41                    17      1      0      0      18
+             4     41                           23      1      1      25
+             5     43                                  26      0      26
+             6     50                                         24      24
+
+            m(j)            5     14     18     24     27     25
+            z(j)            1      1      1      2      1      0
+
+                        Observed Recaptures for Group 2
+                                    sexMale
+
+             i   R(i)                     m(i,j)                    r(i) 
+                        j=  2      3      4      5      6      7
+             1     12       6      1      0      0      0      0       7
+             2     26             11      0      0      0      0      11
+             3     37                    17      1      0      0      18
+             4     39                           22      0      1      23
+             5     45                                  25      0      25
+             6     48                                         28      28
+
+            m(j)            6     12     17     23     25     29
+            z(j)            1      0      1      1      1      0
+
+                           Sums for the above Groups
+
+            m.       0     11     26     35     47     52     54
+            z.       0      2      1      2      3      2      0
+            R.      22     60     78     80     88     98
+            r.      13     25     36     48     51     52
+
+      Data type is Complete Capture Histories.
+
+      Of the 32 unique capture histories, 25 of them
+      include animals not captured on occasion 1.
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  016
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+      Goodness of fit test of seen before versus not seen before
+      against seen again versus not seen again by capture occasions.
+
+                                Test for Group 1
+                                   sexFemale
+
+                  TEST 3.SR2: Animals captured on occasion 2
+
+                              +------+------+
+                             O|   3  |   2  |   5
+                             E|   2.1|   2.9|
+                             C|   0.4|   0.3|
+                              +------+------+
+                             O|  11  |  18  |  29
+                             E|  11.9|  17.1|
+                             C|   0.1|   0.1|
+                              +------+------+
+                                 14     20     34
+                     Chi-square=0.8575 (df=1) P=0.3544
+                       Fisher's Exact Test P=0.6272
+
+                  TEST 3.SR3: Animals captured on occasion 3
+
+                              +------+------+
+                             O|   9  |   5  |  14
+                             E|   6.1|   7.9|
+                             C|   1.3|   1.0|
+                              +------+------+
+                             O|   9  |  18  |  27
+                             E|  11.9|  15.1|
+                             C|   0.7|   0.5|
+                              +------+------+
+                                 18     23     41
+                     Chi-square=3.5864 (df=1) P=0.0583
+                       Fisher's Exact Test P=0.0969
+
+                  TEST 3.SR4: Animals captured on occasion 4
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  017
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+                              +------+------+
+                             O|  12  |   6  |  18
+                             E|  11.0|   7.0|
+                             C|   0.1|   0.1|
+                              +------+------+
+                             O|  13  |  10  |  23
+                             E|  14.0|   9.0|
+                             C|   0.1|   0.1|
+                              +------+------+
+                                 25     16     41
+                     Chi-square=0.4367 (df=1) P=0.5087
+                       Fisher's Exact Test P=0.5396
+
+                  TEST 3.SR5: Animals captured on occasion 5
+
+                              +------+------+
+                             O|  14  |  10  |  24
+                             E|  14.5|   9.5|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|  12  |   7  |  19
+                             E|  11.5|   7.5|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 26     17     43
+                     Chi-square=0.1033 (df=1) P=0.7480
+                       Fisher's Exact Test P=0.7654
+
+                  TEST 3.SR6: Animals captured on occasion 6
+
+                              +------+------+
+                             O|  13  |  14  |  27
+                             E|  13.0|  14.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|  11  |  12  |  23
+                             E|  11.0|  12.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 24     26     50
+                     Chi-square=0.0005 (df=1) P=0.9819
+                       Fisher's Exact Test P=1.0000
+
+      Cumulative result of TEST 3.SR over occasions for Group 1
+      Chi-square=3.4565 (df=5) P=0.6300
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  018
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+      Goodness of fit test of seen before versus not seen before
+      against when next seen again by capture occasions.
+
+                                Test for Group 1
+                                   sexFemale
+
+                  TEST 3.Sm2: Animals captured on occasion 2
+
+                              +------+------+
+                             O|  11  |   0  |  11
+                             E|  10.2|   0.8|
+                             C|   0.1|   0.8|
+                              +------+------+
+                             O|   2  |   1  |   3
+                             E|   2.8|   0.2|
+                             C|   0.2|   2.9|
+                              +------+------+
+                                 13      1     14
+                     Chi-square=3.9487 (df=1) P=0.0469
+                       Fisher's Exact Test P=0.2143
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+                  TEST 3.Sm3: Animals captured on occasion 3
+
+                              +------+------+
+                             O|   9  |   0  |   9
+                             E|   8.5|   0.5|
+                             C|   0.0|   0.5|
+                              +------+------+
+                             O|   8  |   1  |   9
+                             E|   8.5|   0.5|
+                             C|   0.0|   0.5|
+                              +------+------+
+                                 17      1     18
+                     Chi-square=1.0588 (df=1) P=0.3035
+                       Fisher's Exact Test P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+                  TEST 3.Sm4: Animals captured on occasion 4
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  019
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+                              +------+------+
+                             O|  11  |   2  |  13
+                             E|  12.0|   1.0|
+                             C|   0.1|   0.9|
+                              +------+------+
+                             O|  12  |   0  |  12
+                             E|  11.0|   1.0|
+                             C|   0.1|   1.0|
+                              +------+------+
+                                 23      2     25
+                     Chi-square=2.0067 (df=1) P=0.1566
+                       Fisher's Exact Test P=0.4800
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+                  TEST 3.Sm5: Animals captured on occasion 5
+
+                              +------+------+
+                             O|  12  |   0  |  12
+                             E|  12.0|   0.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|  14  |   0  |  14
+                             E|  14.0|   0.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 26      0     26
+                       Chi-square=0.0 (df=0) P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+      Cumulative result of TEST 3.Sm over occasions for Group 1
+      Chi-square=2.0412 (df=3) P=0.5639
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  020
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+                                Test for Group 2
+                                    sexMale
+
+                  TEST 3.SR2: Animals captured on occasion 2
+
+                              +------+------+
+                             O|   2  |   4  |   6
+                             E|   2.5|   3.5|
+                             C|   0.1|   0.1|
+                              +------+------+
+                             O|   9  |  11  |  20
+                             E|   8.5|  11.5|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 11     15     26
+                     Chi-square=0.2574 (df=1) P=0.6119
+                       Fisher's Exact Test P=0.6739
+
+                  TEST 3.SR3: Animals captured on occasion 3
+
+                              +------+------+
+                             O|   4  |   8  |  12
+                             E|   5.8|   6.2|
+                             C|   0.6|   0.5|
+                              +------+------+
+                             O|  14  |  11  |  25
+                             E|  12.2|  12.8|
+                             C|   0.3|   0.3|
+                              +------+------+
+                                 18     19     37
+                     Chi-square=1.6675 (df=1) P=0.1966
+                       Fisher's Exact Test P=0.2953
+
+                  TEST 3.SR4: Animals captured on occasion 4
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  021
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+                              +------+------+
+                             O|   7  |  10  |  17
+                             E|  10.0|   7.0|
+                             C|   0.9|   1.3|
+                              +------+------+
+                             O|  16  |   6  |  22
+                             E|  13.0|   9.0|
+                             C|   0.7|   1.0|
+                              +------+------+
+                                 23     16     39
+                     Chi-square=3.9456 (df=1) P=0.0470
+                       Fisher's Exact Test P=0.0586
+
+                  TEST 3.SR5: Animals captured on occasion 5
+
+                              +------+------+
+                             O|  12  |  11  |  23
+                             E|  12.8|  10.2|
+                             C|   0.0|   0.1|
+                              +------+------+
+                             O|  13  |   9  |  22
+                             E|  12.2|   9.8|
+                             C|   0.0|   0.1|
+                              +------+------+
+                                 25     20     45
+                     Chi-square=0.2179 (df=1) P=0.6407
+                       Fisher's Exact Test P=0.7666
+
+                  TEST 3.SR6: Animals captured on occasion 6
+
+                              +------+------+
+                             O|  16  |   9  |  25
+                             E|  14.6|  10.4|
+                             C|   0.1|   0.2|
+                              +------+------+
+                             O|  12  |  11  |  23
+                             E|  13.4|   9.6|
+                             C|   0.1|   0.2|
+                              +------+------+
+                                 28     20     48
+                     Chi-square=0.6893 (df=1) P=0.4064
+                       Fisher's Exact Test P=0.5589
+
+      Cumulative result of TEST 3.SR over occasions for Group 2
+      Chi-square=5.2759 (df=5) P=0.3831
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  022
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+      Goodness of fit test of seen before versus not seen before
+      against when next seen again by capture occasions.
+
+                                Test for Group 2
+                                    sexMale
+
+                  TEST 3.Sm2: Animals captured on occasion 2
+
+                              +------+------+
+                             O|   9  |   0  |   9
+                             E|   9.0|   0.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|   2  |   0  |   2
+                             E|   2.0|   0.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 11      0     11
+                       Chi-square=0.0 (df=0) P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+                  TEST 3.Sm3: Animals captured on occasion 3
+
+                              +------+------+
+                             O|  13  |   1  |  14
+                             E|  13.2|   0.8|
+                             C|   0.0|   0.1|
+                              +------+------+
+                             O|   4  |   0  |   4
+                             E|   3.8|   0.2|
+                             C|   0.0|   0.2|
+                              +------+------+
+                                 17      1     18
+                     Chi-square=0.3025 (df=1) P=0.5823
+                       Fisher's Exact Test P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+                  TEST 3.Sm4: Animals captured on occasion 4
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  023
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+                              +------+------+
+                             O|  15  |   1  |  16
+                             E|  15.3|   0.7|
+                             C|   0.0|   0.1|
+                              +------+------+
+                             O|   7  |   0  |   7
+                             E|   6.7|   0.3|
+                             C|   0.0|   0.3|
+                              +------+------+
+                                 22      1     23
+                     Chi-square=0.4574 (df=1) P=0.4988
+                       Fisher's Exact Test P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+                  TEST 3.Sm5: Animals captured on occasion 5
+
+                              +------+------+
+                             O|  13  |   0  |  13
+                             E|  13.0|   0.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|  12  |   0  |  12
+                             E|  12.0|   0.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 25      0     25
+                       Chi-square=0.0 (df=0) P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+      Cumulative result of TEST 3.Sm over occasions for Group 2
+      Chi-square=0.0000 (df=2) P=1.0000
+
+      Cumulative result of TEST 3 over groups
+      Chi-square=10.7735 (df=15) P=0.7685
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  024
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+      Goodness of fit test of recaptures partitioned by rows.
+
+                                Test for Group 1
+                                   sexFemale
+
+                  TEST 2.C2: Test of row 1 vs. row 2
+
+                              +------+------+
+                             O|   1  |   0  |   1
+                             E|   0.9|   0.1|
+                             C|   0.0|   0.1|
+                              +------+------+
+                             O|  13  |   1  |  14
+                             E|  13.1|   0.9|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 14      1     15
+                     Chi-square=0.0765 (df=1) P=0.7821
+                       Fisher's Exact Test P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+                  TEST 2.C3: Test of rows 1-2 vs. row 3
+
+                              +------+------+
+                             O|   1  |   0  |   1
+                             E|   0.9|   0.1|
+                             C|   0.0|   0.1|
+                              +------+------+
+                             O|  17  |   1  |  18
+                             E|  17.1|   0.9|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 18      1     19
+                     Chi-square=0.0586 (df=1) P=0.8087
+                       Fisher's Exact Test P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+                  TEST 2.C4: Test of rows 1-3 vs. row 4
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  025
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+                              +------+------+
+                             O|   1  |   0  |   1
+                             E|   0.9|   0.1|
+                             C|   0.0|   0.1|
+                              +------+------+
+                             O|  23  |   2  |  25
+                             E|  23.1|   1.9|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 24      2     26
+                     Chi-square=0.0867 (df=1) P=0.7685
+                       Fisher's Exact Test P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+                  TEST 2.C5: Test of rows 1-4 vs. row 5
+
+                              +------+------+
+                             O|   1  |   1  |   2
+                             E|   1.9|   0.1|
+                             C|   0.4|  12.1|
+                              +------+------+
+                             O|  26  |   0  |  26
+                             E|  25.1|   0.9|
+                             C|   0.0|   0.9|
+                              +------+------+
+                                 27      1     28
+                     Chi-square=13.4815 (df=1) P=0.0002
+                       Fisher's Exact Test P=0.0714
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+      Cumulative result of TEST 2 over cohorts for Group   1
+      Chi-square=3.2503 (df=4) P=0.5168
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  026
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+                                Test for Group 2
+                                    sexMale
+
+                  TEST 2.C2: Test of row 1 vs. row 2
+
+                                 +------+
+                                O|   1  |   1
+                                E|   1.0|
+                                C|   0.0|
+                                 +------+
+                                O|  11  |  11
+                                E|  11.0|
+                                C|   0.0|
+                                 +------+
+                                    12     12
+                       Chi-square=0.0 (df=0) P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+                  TEST 2.C3: Test of rows 1-2 vs. row 3
+
+                              +------+------+
+                             O|   0  |   0  |   0
+                             E|   0.0|   0.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|  17  |   1  |  18
+                             E|  17.0|   1.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 17      1     18
+                       Chi-square=0.0 (df=0) P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+                  TEST 2.C4: Test of rows 1-3 vs. row 4
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  027
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+                              +------+------+
+                             O|   1  |   0  |   1
+                             E|   1.0|   0.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|  22  |   1  |  23
+                             E|  22.0|   1.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 23      1     24
+                     Chi-square=0.0454 (df=1) P=0.8313
+                       Fisher's Exact Test P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+                  TEST 2.C5: Test of rows 1-4 vs. row 5
+
+                              +------+------+
+                             O|   0  |   1  |   1
+                             E|   1.0|   0.0|
+                             C|   1.0|  24.0|
+                              +------+------+
+                             O|  25  |   0  |  25
+                             E|  24.0|   1.0|
+                             C|   0.0|   1.0|
+                              +------+------+
+                                 25      1     26
+                     Chi-square=26.0000 (df=1) P=0.0000
+                       Fisher's Exact Test P=0.0385
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+      Cumulative result of TEST 2 over cohorts for Group   2
+      Chi-square=4.2839 (df=2) P=0.1174
+
+      Cumulative result of TEST 2 over groups
+      Chi-square=7.5342 (df=6) P=0.2743
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  028
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+ 
+ 
+                   Summary of TEST 3 (Goodness of fit) Results
+ 
+          Group  Component  Chi-square   df   P-level  Sufficient Data
+          -----  ---------  ----------  ----  -------  ---------------
+            1    3.SR2         0.2359     1    0.6272       Yes
+            1    3.SR3         2.7551     1    0.0969       Yes
+            1    3.SR4         0.3764     1    0.5396       Yes
+            1    3.SR5         0.0891     1    0.7654       Yes
+            1    3.SR6         0.0000     1    1.0000       Yes
+          Group 1 3.SR         3.4565     5    0.6300
+            1    3.Sm2         1.5426     1    0.2143       No
+            1    3.Sm3         0.0000     1    1.0000       No
+            1    3.Sm4         0.4986     1    0.4800       No
+            1    3.Sm5         0.0000     0    1.0000       No
+          Group 1 3.Sm         2.0412     3    0.5639
+          Group 1 TEST 3       5.4977     8    0.7033
+            2    3.SR2         0.1771     1    0.6739       Yes
+            2    3.SR3         1.0950     1    0.2953       Yes
+            2    3.SR4         3.5740     1    0.0586       Yes
+            2    3.SR5         0.0881     1    0.7666       Yes
+            2    3.SR6         0.3416     1    0.5589       Yes
+          Group 2 3.SR         5.2759     5    0.3831
+            2    3.Sm2         0.0000     0    1.0000       No
+            2    3.Sm3         0.0000     1    1.0000       No
+            2    3.Sm4         0.0000     1    1.0000       No
+            2    3.Sm5         0.0000     0    1.0000       No
+          Group 2 3.Sm         0.0000     2    1.0000
+          Group 2 TEST 3       5.2759     7    0.6263
+          All Groups TEST 3   10.7735    15    0.7685
+ 
+ 
+                   Summary of TEST 2 (Goodness of fit) Results
+ 
+          Group  Component  Chi-square   df   P-level  Sufficient Data
+          -----  ---------  ----------  ----  -------  ---------------
+            1    2.C2          0.0000     1    1.0000       No
+            1    2.C3          0.0000     1    1.0000       No
+            1    2.C4          0.0000     1    1.0000       No
+            1    2.C5          3.2503     1    0.0714       No
+          Group 1 TEST 2       3.2503     4    0.5168
+            2    2.C2          0.0000     0    1.0000       No
+            2    2.C3          0.0000     0    1.0000       No
+            2    2.C4          0.0000     1    1.0000       No
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  029
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+            2    2.C5          4.2839     1    0.0385       No
+          Group 2 TEST 2       4.2839     2    0.1174
+          All Groups TEST 2    7.5342     6    0.2743
+ 
+ 
+               Goodness of Fit Results (TEST 2 + TEST 3) by Group
+ 
+                        Group  Chi-square   df   P-level
+                        -----  ----------  ----  -------
+                          1       8.7480    12    0.7243
+                          2       9.5598     9    0.3873
+                      Total      18.3077    21    0.6295
+
+ +---------------------------------------------------------------------------+
+ |                                                                           |
+ |          Maximum Likelihood Estimates under Model H6Phi                   |
+ |                                                                           |
+ |          Akaike's Information Criterion = 697.9511                        |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |                         Estimates for Group 1                             |
+ |                               sexFemale                                   |
+ |  Phi(1)         0.742857       0.237222       0.277903       1.207811     |
+ |  Phi(2)         0.446841       0.098283       0.254206       0.639475     |
+ |  Phi(3)         0.453813       0.081535       0.294004       0.613621     |
+ |  Phi(4)         0.640424       0.083234       0.477286       0.803562     |
+ |  Phi(5)         0.628045       0.081052       0.469184       0.786907     |
+ |  p(2)           0.673077       0.245230       0.192426       1.153728     |
+ |  p(3)           0.860068       0.126374       0.612376       1.107761     |
+ |  p(4)           0.916497       0.079207       0.761252       1.071742     |
+ |  p(5)           0.878873       0.079441       0.723169       1.034577     |
+ |  p(6)           0.928367       0.068426       0.794252       1.062482     |
+ |  Phi(6)p(7)     0.480000       0.070654       0.341518       0.618482     |
+ |  Corr(Phi(1),Phi(2))          -0.195567                                   |
+ |  Corr(Phi(2),Phi(3))          -0.110356                                   |
+ |  Corr(Phi(3),Phi(4))          -0.055821                                   |
+ |  Corr(Phi(4),Phi(5))          -0.109811                                   |
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  030
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+ |                         Estimates for Group 2                             |
+ |                                sexMale                                    |
+ |  Phi(1)         0.696970       0.204983       0.295203       1.098736     |
+ |  Phi(2)         0.423077       0.096891       0.233171       0.612983     |
+ |  Phi(3)         0.505288       0.087493       0.333801       0.676775     |
+ |  Phi(4)         0.609402       0.083841       0.445073       0.773730     |
+ |  Phi(5)         0.570818       0.077695       0.418535       0.723101     |
+ |  p(2)           0.717391       0.223853       0.278639       1.156144     |
+ |  p(3)           1.000000       0.000000       1.000000       1.000000     |
+ |  p(4)           0.909302       0.085574       0.741576       1.077028     |
+ |  p(5)           0.927419       0.069344       0.791506       1.063333     |
+ |  p(6)           0.935829       0.061679       0.814938       1.056720     |
+ |  Phi(6)p(7)     0.583333       0.071159       0.443861       0.722806     |
+ |  Corr(Phi(1),Phi(2))          -0.220062                                   |
+ |  Corr(Phi(2),Phi(3))           0.000000                                   |
+ |  Corr(Phi(3),Phi(4))          -0.067910                                   |
+ |  Corr(Phi(4),Phi(5))          -0.068905                                   |
+ |                                                                           |
+ |                Correlation and Ratio of Survivals between Groups          |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |  S(1,2,Phi(1))  1.065839       0.462719       0.158909       1.972768     |
+ |  Corr(1,2,Phi(1))              0.000000                                   |
+ |  S(1,2,Phi(2))  1.056170       0.335366       0.398852       1.713488     |
+ |  Corr(1,2,Phi(2))              0.000000                                   |
+ |  S(1,2,Phi(3))  0.898127       0.224106       0.458880       1.337374     |
+ |  Corr(1,2,Phi(3))              0.000000                                   |
+ |  S(1,2,Phi(4))  1.050907       0.198895       0.661073       1.440740     |
+ |  Corr(1,2,Phi(4))              0.000000                                   |
+ |  S(1,2,Phi(5))  1.100255       0.206371       0.695767       1.504743     |
+ |  Corr(1,2,Phi(5))              0.000000                                   |
+ |                                                                           |
+ |   S(i,j,Phi(I)) equals treatment effect estimated as                      |
+ |     Phi(I) for group i / Phi(I) for group j.                              |
+ |   Corr(i,j,Phi(I)) equals estimated sampling correlation                  |
+ |     between Phi(I) for group i and Phi(I) for group j.                    |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  031
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+               TEST 1.R6: Test of Phi(6)p(7) equal across groups, 
+               assuming higher order parameters are equal across groups.
+
+                              +------+------+
+                             O|  24  |  26  |  50
+                             E|  26.5|  23.5|
+                             C|   0.2|   0.3|
+                              +------+------+
+                             O|  28  |  20  |  48
+                             E|  25.5|  22.5|
+                             C|   0.3|   0.3|
+                              +------+------+
+                                 52     46     98
+                     Chi-square=1.0499 (df=1) P=0.3055
+                       Fisher's Exact Test P=0.3201
+
+ +---------------------------------------------------------------------------+
+ |                                                                           |
+ |          Maximum Likelihood Estimates under Model H6p                     |
+ |                                                                           |
+ |          Akaike's Information Criterion = 697.0031                        |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |                         Estimates for Group 1                             |
+ |                               sexFemale                                   |
+ |  Phi(1)         0.742857       0.237222       0.277903       1.207811     |
+ |  Phi(2)         0.446841       0.098283       0.254206       0.639475     |
+ |  Phi(3)         0.453813       0.081535       0.294004       0.613621     |
+ |  Phi(4)         0.640424       0.083234       0.477286       0.803562     |
+ |  Phi(5)         0.623754       0.079265       0.468395       0.779113     |
+ |  p(2)           0.673077       0.245230       0.192426       1.153728     |
+ |  p(3)           0.860068       0.126374       0.612376       1.107761     |
+ |  p(4)           0.916497       0.079207       0.761252       1.071742     |
+ |  p(5)           0.878873       0.079441       0.723169       1.034577     |
+ |  p(6)           0.934754       0.062378       0.812493       1.057015     |
+ |  Corr(Phi(1),Phi(2))          -0.195567                                   |
+ |  Corr(Phi(2),Phi(3))          -0.110356                                   |
+ |  Corr(Phi(3),Phi(4))          -0.055821                                   |
+ |  Corr(Phi(4),Phi(5))          -0.111519                                   |
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  032
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+ |                         Estimates for Group 2                             |
+ |                                sexMale                                    |
+ |  Phi(1)         0.696970       0.204983       0.295203       1.098736     |
+ |  Phi(2)         0.423077       0.096891       0.233171       0.612983     |
+ |  Phi(3)         0.505288       0.087493       0.333801       0.676775     |
+ |  Phi(4)         0.609402       0.083841       0.445073       0.773730     |
+ |  Phi(5)         0.574458       0.078898       0.419818       0.729097     |
+ |  p(2)           0.717391       0.223853       0.278639       1.156144     |
+ |  p(3)           1.000000       0.000000       1.000000       1.000000     |
+ |  p(4)           0.909302       0.085574       0.741576       1.077028     |
+ |  p(5)           0.927419       0.069344       0.791506       1.063333     |
+ |  p(6)           0.929900       0.066765       0.799041       1.060759     |
+ |  Corr(Phi(1),Phi(2))          -0.220062                                   |
+ |  Corr(Phi(2),Phi(3))           0.000000                                   |
+ |  Corr(Phi(3),Phi(4))          -0.067910                                   |
+ |  Corr(Phi(4),Phi(5))          -0.068287                                   |
+ |                         Estimates for Pooled Groups                       |
+ |  Phi(6)p(7)     0.530612       0.050413       0.431803       0.629421     |
+ |                                                                           |
+ |                Correlation and Ratio of Survivals between Groups          |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |  S(1,2,Phi(1))  1.065839       0.462719       0.158909       1.972768     |
+ |  Corr(1,2,Phi(1))              0.000000                                   |
+ |  S(1,2,Phi(2))  1.056170       0.335366       0.398852       1.713488     |
+ |  Corr(1,2,Phi(2))              0.000000                                   |
+ |  S(1,2,Phi(3))  0.898127       0.224106       0.458880       1.337374     |
+ |  Corr(1,2,Phi(3))              0.000000                                   |
+ |  S(1,2,Phi(4))  1.050907       0.198895       0.661073       1.440740     |
+ |  Corr(1,2,Phi(4))              0.000000                                   |
+ |  S(1,2,Phi(5))  1.085814       0.202932       0.688068       1.483560     |
+ |  Corr(1,2,Phi(5))              0.002366                                   |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  033
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+               TEST 1.T6: Test of p(6) equal across groups, 
+               assuming higher order parameters are equal across groups.
+
+                              +------+------+
+                             O|  27  |   1  |  28
+                             E|  27.0|   1.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|  25  |   1  |  26
+                             E|  25.0|   1.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 52      2     54
+                     Chi-square=0.0029 (df=1) P=0.9574
+                       Fisher's Exact Test P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+ +---------------------------------------------------------------------------+
+ |                                                                           |
+ |          Maximum Likelihood Estimates under Model H5Phi                   |
+ |                                                                           |
+ |          Akaike's Information Criterion = 695.0060                        |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |                         Estimates for Group 1                             |
+ |                               sexFemale                                   |
+ |  Phi(1)         0.742857       0.237222       0.277903       1.207811     |
+ |  Phi(2)         0.446841       0.098283       0.254206       0.639475     |
+ |  Phi(3)         0.453813       0.081535       0.294004       0.613621     |
+ |  Phi(4)         0.640424       0.083234       0.477286       0.803562     |
+ |  Phi(5)         0.624462       0.078323       0.470948       0.777975     |
+ |  p(2)           0.673077       0.245230       0.192426       1.153728     |
+ |  p(3)           0.860068       0.126374       0.612376       1.107761     |
+ |  p(4)           0.916497       0.079207       0.761252       1.071742     |
+ |  p(5)           0.878873       0.079441       0.723169       1.034577     |
+ |  Corr(Phi(1),Phi(2))          -0.195567                                   |
+ |  Corr(Phi(2),Phi(3))          -0.110356                                   |
+ |  Corr(Phi(3),Phi(4))          -0.055821                                   |
+ |  Corr(Phi(4),Phi(5))          -0.112988                                   |
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  034
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+ |                         Estimates for Group 2                             |
+ |                                sexMale                                    |
+ |  Phi(1)         0.696970       0.204983       0.295203       1.098736     |
+ |  Phi(2)         0.423077       0.096891       0.233171       0.612983     |
+ |  Phi(3)         0.505288       0.087493       0.333801       0.676775     |
+ |  Phi(4)         0.609402       0.083841       0.445073       0.773730     |
+ |  Phi(5)         0.573758       0.077624       0.421614       0.725901     |
+ |  p(2)           0.717391       0.223853       0.278639       1.156144     |
+ |  p(3)           1.000000       0.000000       1.000000       1.000000     |
+ |  p(4)           0.909302       0.085574       0.741576       1.077028     |
+ |  p(5)           0.927419       0.069344       0.791506       1.063333     |
+ |  Corr(Phi(1),Phi(2))          -0.220062                                   |
+ |  Corr(Phi(2),Phi(3))           0.000000                                   |
+ |  Corr(Phi(3),Phi(4))          -0.067910                                   |
+ |  Corr(Phi(4),Phi(5))          -0.069323                                   |
+ |                         Estimates for Pooled Groups                       |
+ |  p(6)           0.932414       0.045803       0.842641       1.022187     |
+ |  Phi(6)p(7)     0.530612       0.050413       0.431803       0.629421     |
+ |                                                                           |
+ |                Correlation and Ratio of Survivals between Groups          |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |  S(1,2,Phi(1))  1.065839       0.462719       0.158909       1.972768     |
+ |  Corr(1,2,Phi(1))              0.000000                                   |
+ |  S(1,2,Phi(2))  1.056170       0.335366       0.398852       1.713488     |
+ |  Corr(1,2,Phi(2))              0.000000                                   |
+ |  S(1,2,Phi(3))  0.898127       0.224106       0.458880       1.337374     |
+ |  Corr(1,2,Phi(3))              0.000000                                   |
+ |  S(1,2,Phi(4))  1.050907       0.198895       0.661073       1.440740     |
+ |  Corr(1,2,Phi(4))              0.000000                                   |
+ |  S(1,2,Phi(5))  1.088372       0.197663       0.700952       1.475792     |
+ |  Corr(1,2,Phi(5))              0.030986                                   |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  035
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+               TEST 1.R5: Test of Phi(5) equal across groups, 
+               assuming higher order parameters are equal across groups.
+
+                              +------+------+
+                             O|  26  |  17  |  43
+                             E|  24.9|  18.1|
+                             C|   0.0|   0.1|
+                              +------+------+
+                             O|  25  |  20  |  45
+                             E|  26.1|  18.9|
+                             C|   0.0|   0.1|
+                              +------+------+
+                                 51     37     88
+                     Chi-square=0.2175 (df=1) P=0.6409
+                       Fisher's Exact Test P=0.6712
+
+ +---------------------------------------------------------------------------+
+ |                                                                           |
+ |          Maximum Likelihood Estimates under Model H5p                     |
+ |                                                                           |
+ |          Akaike's Information Criterion = 693.2236                        |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |                         Estimates for Group 1                             |
+ |                               sexFemale                                   |
+ |  Phi(1)         0.742857       0.237222       0.277903       1.207811     |
+ |  Phi(2)         0.446841       0.098283       0.254206       0.639475     |
+ |  Phi(3)         0.453813       0.081535       0.294004       0.613621     |
+ |  Phi(4)         0.643785       0.084012       0.479121       0.808448     |
+ |  p(2)           0.673077       0.245230       0.192426       1.153728     |
+ |  p(3)           0.860068       0.126374       0.612376       1.107761     |
+ |  p(4)           0.916497       0.079207       0.761252       1.071742     |
+ |  p(5)           0.874286       0.081505       0.714536       1.034035     |
+ |  Corr(Phi(1),Phi(2))          -0.195567                                   |
+ |  Corr(Phi(2),Phi(3))          -0.110356                                   |
+ |  Corr(Phi(3),Phi(4))          -0.055594                                   |
+ |  Corr(Phi(4),Phi(5))          -0.084807                                   |
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  036
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+ |                         Estimates for Group 2                             |
+ |                                sexMale                                    |
+ |  Phi(1)         0.696970       0.204983       0.295203       1.098736     |
+ |  Phi(2)         0.423077       0.096891       0.233171       0.612983     |
+ |  Phi(3)         0.505288       0.087493       0.333801       0.676775     |
+ |  Phi(4)         0.607571       0.083090       0.444715       0.770426     |
+ |  p(2)           0.717391       0.223853       0.278639       1.156144     |
+ |  p(3)           1.000000       0.000000       1.000000       1.000000     |
+ |  p(4)           0.909302       0.085574       0.741576       1.077028     |
+ |  p(5)           0.930214       0.066573       0.799730       1.060698     |
+ |  Corr(Phi(1),Phi(2))          -0.220062                                   |
+ |  Corr(Phi(2),Phi(3))           0.000000                                   |
+ |  Corr(Phi(3),Phi(4))          -0.068318                                   |
+ |  Corr(Phi(4),Phi(5))          -0.044923                                   |
+ |                         Estimates for Pooled Groups                       |
+ |  Phi(5)         0.598533       0.056052       0.488672       0.708395     |
+ |  p(6)           0.932414       0.045803       0.842641       1.022187     |
+ |  Phi(6)p(7)     0.530612       0.050413       0.431803       0.629421     |
+ |                                                                           |
+ |                Correlation and Ratio of Survivals between Groups          |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |  S(1,2,Phi(1))  1.065839       0.462719       0.158909       1.972768     |
+ |  Corr(1,2,Phi(1))              0.000000                                   |
+ |  S(1,2,Phi(2))  1.056170       0.335366       0.398852       1.713488     |
+ |  Corr(1,2,Phi(2))              0.000000                                   |
+ |  S(1,2,Phi(3))  0.898127       0.224106       0.458880       1.337374     |
+ |  Corr(1,2,Phi(3))              0.000000                                   |
+ |  S(1,2,Phi(4))  1.059604       0.199890       0.667820       1.451389     |
+ |  Corr(1,2,Phi(4))              0.004053                                   |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  037
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+               TEST 1.T5: Test of p(5) equal across groups, 
+               assuming higher order parameters are equal across groups.
+
+                              +------+------+
+                             O|  24  |   2  |  26
+                             E|  24.4|   1.6|
+                             C|   0.0|   0.1|
+                              +------+------+
+                             O|  23  |   1  |  24
+                             E|  22.6|   1.4|
+                             C|   0.0|   0.1|
+                              +------+------+
+                                 47      3     50
+                     Chi-square=0.2751 (df=1) P=0.6000
+                       Fisher's Exact Test P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+ +---------------------------------------------------------------------------+
+ |                                                                           |
+ |          Maximum Likelihood Estimates under Model H4Phi                   |
+ |                                                                           |
+ |          Akaike's Information Criterion = 691.5047                        |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |                         Estimates for Group 1                             |
+ |                               sexFemale                                   |
+ |  Phi(1)         0.742857       0.237222       0.277903       1.207811     |
+ |  Phi(2)         0.446841       0.098283       0.254206       0.639475     |
+ |  Phi(3)         0.453813       0.081535       0.294004       0.613621     |
+ |  Phi(4)         0.636298       0.081078       0.477386       0.795211     |
+ |  p(2)           0.673077       0.245230       0.192426       1.153728     |
+ |  p(3)           0.860068       0.126374       0.612376       1.107761     |
+ |  p(4)           0.916497       0.079207       0.761252       1.071742     |
+ |  Corr(Phi(1),Phi(2))          -0.195567                                   |
+ |  Corr(Phi(2),Phi(3))          -0.110356                                   |
+ |  Corr(Phi(3),Phi(4))          -0.056936                                   |
+ |  Corr(Phi(4),Phi(5))          -0.068544                                   |
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  038
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+ |                         Estimates for Group 2                             |
+ |                                sexMale                                    |
+ |  Phi(1)         0.696970       0.204983       0.295203       1.098736     |
+ |  Phi(2)         0.423077       0.096891       0.233171       0.612983     |
+ |  Phi(3)         0.505288       0.087493       0.333801       0.676775     |
+ |  Phi(4)         0.615415       0.083623       0.451514       0.779316     |
+ |  p(2)           0.717391       0.223853       0.278639       1.156144     |
+ |  p(3)           1.000000       0.000000       1.000000       1.000000     |
+ |  p(4)           0.909302       0.085574       0.741576       1.077028     |
+ |  Corr(Phi(1),Phi(2))          -0.220062                                   |
+ |  Corr(Phi(2),Phi(3))           0.000000                                   |
+ |  Corr(Phi(3),Phi(4))          -0.068759                                   |
+ |  Corr(Phi(4),Phi(5))          -0.064276                                   |
+ |                         Estimates for Pooled Groups                       |
+ |  Phi(5)         0.598533       0.056052       0.488672       0.708395     |
+ |  p(5)           0.900789       0.053833       0.795277       1.006302     |
+ |  p(6)           0.932414       0.045803       0.842641       1.022187     |
+ |  Phi(6)p(7)     0.530612       0.050413       0.431803       0.629421     |
+ |                                                                           |
+ |                Correlation and Ratio of Survivals between Groups          |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |  S(1,2,Phi(1))  1.065839       0.462719       0.158909       1.972768     |
+ |  Corr(1,2,Phi(1))              0.000000                                   |
+ |  S(1,2,Phi(2))  1.056170       0.335366       0.398852       1.713488     |
+ |  Corr(1,2,Phi(2))              0.000000                                   |
+ |  S(1,2,Phi(3))  0.898127       0.224106       0.458880       1.337374     |
+ |  Corr(1,2,Phi(3))              0.000000                                   |
+ |  S(1,2,Phi(4))  1.033934       0.189091       0.663315       1.404553     |
+ |  Corr(1,2,Phi(4))              0.036176                                   |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  039
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+               TEST 1.R4: Test of Phi(4) equal across groups, 
+               assuming higher order parameters are equal across groups.
+
+                              +------+------+
+                             O|  25  |  16  |  41
+                             E|  24.6|  16.4|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|  23  |  16  |  39
+                             E|  23.4|  15.6|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 48     32     80
+                     Chi-square=0.0334 (df=1) P=0.8551
+                       Fisher's Exact Test P=1.0000
+
+ +---------------------------------------------------------------------------+
+ |                                                                           |
+ |          Maximum Likelihood Estimates under Model H4p                     |
+ |                                                                           |
+ |          Akaike's Information Criterion = 689.5380                        |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |                         Estimates for Group 1                             |
+ |                               sexFemale                                   |
+ |  Phi(1)         0.742857       0.237222       0.277903       1.207811     |
+ |  Phi(2)         0.446841       0.098283       0.254206       0.639475     |
+ |  Phi(3)         0.454429       0.081688       0.294320       0.614538     |
+ |  p(2)           0.673077       0.245230       0.192426       1.153728     |
+ |  p(3)           0.860068       0.126374       0.612376       1.107761     |
+ |  p(4)           0.915254       0.080003       0.758448       1.072061     |
+ |  Corr(Phi(1),Phi(2))          -0.195567                                   |
+ |  Corr(Phi(2),Phi(3))          -0.110298                                   |
+ |  Corr(Phi(3),Phi(4))          -0.041505                                   |
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  040
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+ |                         Estimates for Group 2                             |
+ |                                sexMale                                    |
+ |  Phi(1)         0.696970       0.204983       0.295203       1.098736     |
+ |  Phi(2)         0.423077       0.096891       0.233171       0.612983     |
+ |  Phi(3)         0.504505       0.087090       0.333807       0.675202     |
+ |  p(2)           0.717391       0.223853       0.278639       1.156144     |
+ |  p(3)           1.000000       0.000000       1.000000       1.000000     |
+ |  p(4)           0.910714       0.084000       0.746075       1.075354     |
+ |  Corr(Phi(1),Phi(2))          -0.220062                                   |
+ |  Corr(Phi(2),Phi(3))           0.000000                                   |
+ |  Corr(Phi(3),Phi(4))          -0.045535                                   |
+ |                         Estimates for Pooled Groups                       |
+ |  Phi(4)         0.626118       0.059266       0.509957       0.742278     |
+ |  Phi(5)         0.598533       0.056052       0.488672       0.708395     |
+ |  p(5)           0.900789       0.053833       0.795277       1.006302     |
+ |  p(6)           0.932414       0.045803       0.842641       1.022187     |
+ |  Phi(6)p(7)     0.530612       0.050413       0.431803       0.629421     |
+ |  Corr(Phi(4),Phi(5))          -0.092270                                   |
+ |                                                                           |
+ |                Correlation and Ratio of Survivals between Groups          |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |  S(1,2,Phi(1))  1.065839       0.462719       0.158909       1.972768     |
+ |  Corr(1,2,Phi(1))              0.000000                                   |
+ |  S(1,2,Phi(2))  1.056170       0.335366       0.398852       1.713488     |
+ |  Corr(1,2,Phi(2))              0.000000                                   |
+ |  S(1,2,Phi(3))  0.900743       0.224260       0.461193       1.340293     |
+ |  Corr(1,2,Phi(3))              0.002032                                   |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  041
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+               TEST 1.T4: Test of p(4) equal across groups, 
+               assuming higher order parameters are equal across groups.
+
+                              +------+------+
+                             O|  18  |   1  |  19
+                             E|  18.0|   1.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|  17  |   1  |  18
+                             E|  17.0|   1.0|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 35      2     37
+                     Chi-square=0.0015 (df=1) P=0.9686
+                       Fisher's Exact Test P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+ +---------------------------------------------------------------------------+
+ |                                                                           |
+ |          Maximum Likelihood Estimates under Model H3Phi                   |
+ |                                                                           |
+ |          Akaike's Information Criterion = 687.5396                        |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |                         Estimates for Group 1                             |
+ |                               sexFemale                                   |
+ |  Phi(1)         0.742857       0.237222       0.277903       1.207811     |
+ |  Phi(2)         0.446841       0.098283       0.254206       0.639475     |
+ |  Phi(3)         0.454845       0.081111       0.295867       0.613823     |
+ |  p(2)           0.673077       0.245230       0.192426       1.153728     |
+ |  p(3)           0.860068       0.126374       0.612376       1.107761     |
+ |  Corr(Phi(1),Phi(2))          -0.195567                                   |
+ |  Corr(Phi(2),Phi(3))          -0.111185                                   |
+ |  Corr(Phi(3),Phi(4))          -0.042930                                   |
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  042
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+ |                         Estimates for Group 2                             |
+ |                                sexMale                                    |
+ |  Phi(1)         0.696970       0.204983       0.295203       1.098736     |
+ |  Phi(2)         0.423077       0.096891       0.233171       0.612983     |
+ |  Phi(3)         0.504018       0.086073       0.335314       0.672721     |
+ |  p(2)           0.717391       0.223853       0.278639       1.156144     |
+ |  p(3)           1.000000       0.000000       1.000000       1.000000     |
+ |  Corr(Phi(1),Phi(2))          -0.220062                                   |
+ |  Corr(Phi(2),Phi(3))           0.000000                                   |
+ |  Corr(Phi(3),Phi(4))          -0.044828                                   |
+ |                         Estimates for Pooled Groups                       |
+ |  Phi(4)         0.626118       0.059266       0.509957       0.742278     |
+ |  Phi(5)         0.598533       0.056052       0.488672       0.708395     |
+ |  p(4)           0.913043       0.058176       0.799019       1.027068     |
+ |  p(5)           0.900789       0.053833       0.795277       1.006302     |
+ |  p(6)           0.932414       0.045803       0.842641       1.022187     |
+ |  Phi(6)p(7)     0.530612       0.050413       0.431803       0.629421     |
+ |  Corr(Phi(4),Phi(5))          -0.092270                                   |
+ |                                                                           |
+ |                Correlation and Ratio of Survivals between Groups          |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |  S(1,2,Phi(1))  1.065839       0.462719       0.158909       1.972768     |
+ |  Corr(1,2,Phi(1))              0.000000                                   |
+ |  S(1,2,Phi(2))  1.056170       0.335366       0.398852       1.713488     |
+ |  Corr(1,2,Phi(2))              0.000000                                   |
+ |  S(1,2,Phi(3))  0.902439       0.220487       0.470285       1.334593     |
+ |  Corr(1,2,Phi(3))              0.020859                                   |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  043
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+               TEST 1.R3: Test of Phi(3) equal across groups, 
+               assuming higher order parameters are equal across groups.
+
+                              +------+------+
+                             O|  18  |  23  |  41
+                             E|  18.9|  22.1|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|  18  |  19  |  37
+                             E|  17.1|  19.9|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 36     42     78
+                     Chi-square=0.1763 (df=1) P=0.6746
+                       Fisher's Exact Test P=0.8204
+
+ +---------------------------------------------------------------------------+
+ |                                                                           |
+ |          Maximum Likelihood Estimates under Model H3p                     |
+ |                                                                           |
+ |          Akaike's Information Criterion = 685.7159                        |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |                         Estimates for Group 1                             |
+ |                               sexFemale                                   |
+ |  Phi(1)         0.742857       0.237222       0.277903       1.207811     |
+ |  Phi(2)         0.443791       0.096361       0.254923       0.632658     |
+ |  p(2)           0.673077       0.245230       0.192426       1.153728     |
+ |  p(3)           0.865979       0.120968       0.628882       1.103077     |
+ |  Corr(Phi(1),Phi(2))          -0.198106                                   |
+ |  Corr(Phi(2),Phi(3))          -0.073934                                   |
+ |                         Estimates for Group 2                             |
+ |                                sexMale                                    |
+ |  Phi(1)         0.696970       0.204983       0.295203       1.098736     |
+ |  Phi(2)         0.423077       0.096891       0.233171       0.612983     |
+ |  p(2)           0.717391       0.223853       0.278639       1.156144     |
+ |  p(3)           1.000000       0.000000       1.000000       1.000000     |
+ |  Corr(Phi(1),Phi(2))          -0.220062                                   |
+ |  Corr(Phi(2),Phi(3))           0.000000                                   |
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  044
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+ |                         Estimates for Pooled Groups                       |
+ |  Phi(3)         0.478170       0.059709       0.361141       0.595200     |
+ |  Phi(4)         0.626118       0.059266       0.509957       0.742278     |
+ |  Phi(5)         0.598533       0.056052       0.488672       0.708395     |
+ |  p(4)           0.913043       0.058176       0.799019       1.027068     |
+ |  p(5)           0.900789       0.053833       0.795277       1.006302     |
+ |  p(6)           0.932414       0.045803       0.842641       1.022187     |
+ |  Phi(6)p(7)     0.530612       0.050413       0.431803       0.629421     |
+ |  Corr(Phi(3),Phi(4))          -0.061308                                   |
+ |  Corr(Phi(4),Phi(5))          -0.092270                                   |
+ |                                                                           |
+ |                Correlation and Ratio of Survivals between Groups          |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |  S(1,2,Phi(1))  1.065839       0.462719       0.158909       1.972768     |
+ |  Corr(1,2,Phi(1))              0.000000                                   |
+ |  S(1,2,Phi(2))  1.048960       0.331036       0.400130       1.697790     |
+ |  Corr(1,2,Phi(2))              0.000000                                   |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+               TEST 1.T3: Test of p(3) equal across groups, 
+               assuming higher order parameters are equal across groups.
+
+                              +------+------+
+                             O|  14  |   1  |  15
+                             E|  14.4|   0.6|
+                             C|   0.0|   0.4|
+                              +------+------+
+                             O|  12  |   0  |  12
+                             E|  11.6|   0.4|
+                             C|   0.0|   0.4|
+                              +------+------+
+                                 26      1     27
+                     Chi-square=0.8308 (df=1) P=0.3621
+                       Fisher's Exact Test P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  045
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+ +---------------------------------------------------------------------------+
+ |                                                                           |
+ |          Maximum Likelihood Estimates under Model H2Phi                   |
+ |                                                                           |
+ |          Akaike's Information Criterion = 684.9222                        |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |                         Estimates for Group 1                             |
+ |                               sexFemale                                   |
+ |  Phi(1)         0.742857       0.237222       0.277903       1.207811     |
+ |  Phi(2)         0.429557       0.089856       0.253439       0.605675     |
+ |  p(2)           0.673077       0.245230       0.192426       1.153728     |
+ |  Corr(Phi(1),Phi(2))          -0.205634                                   |
+ |  Corr(Phi(2),Phi(3))          -0.044048                                   |
+ |                         Estimates for Group 2                             |
+ |                                sexMale                                    |
+ |  Phi(1)         0.696970       0.204983       0.295203       1.098736     |
+ |  Phi(2)         0.441358       0.102741       0.239986       0.642730     |
+ |  p(2)           0.717391       0.223853       0.278639       1.156144     |
+ |  Corr(Phi(1),Phi(2))          -0.216499                                   |
+ |  Corr(Phi(2),Phi(3))          -0.039582                                   |
+ |                         Estimates for Pooled Groups                       |
+ |  Phi(3)         0.478170       0.059709       0.361141       0.595200     |
+ |  Phi(4)         0.626118       0.059266       0.509957       0.742278     |
+ |  Phi(5)         0.598533       0.056052       0.488672       0.708395     |
+ |  p(3)           0.923077       0.072878       0.780236       1.065917     |
+ |  p(4)           0.913043       0.058176       0.799019       1.027068     |
+ |  p(5)           0.900789       0.053833       0.795277       1.006302     |
+ |  p(6)           0.932414       0.045803       0.842641       1.022187     |
+ |  Phi(6)p(7)     0.530612       0.050413       0.431803       0.629421     |
+ |  Corr(Phi(3),Phi(4))          -0.061308                                   |
+ |  Corr(Phi(4),Phi(5))          -0.092270                                   |
+ |                                                                           |
+ |                Correlation and Ratio of Survivals between Groups          |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |  S(1,2,Phi(1))  1.065839       0.462719       0.158909       1.972768     |
+ |  Corr(1,2,Phi(1))              0.000000                                   |
+ |  S(1,2,Phi(2))  0.973262       0.299133       0.386962       1.559562     |
+ |  Corr(1,2,Phi(2))              0.035745                                   |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  046
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+               TEST 1.R2: Test of Phi(2) equal across groups, 
+               assuming higher order parameters are equal across groups.
+
+                              +------+------+
+                             O|  14  |  20  |  34
+                             E|  14.2|  19.8|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|  11  |  15  |  26
+                             E|  10.8|  15.2|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 25     35     60
+                     Chi-square=0.0078 (df=1) P=0.9298
+                       Fisher's Exact Test P=1.0000
+
+ +---------------------------------------------------------------------------+
+ |                                                                           |
+ |          Maximum Likelihood Estimates under Model H2p                     |
+ |                                                                           |
+ |          Akaike's Information Criterion = 682.9299                        |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |                         Estimates for Group 1                             |
+ |                               sexFemale                                   |
+ |  Phi(1)         0.740000       0.232775       0.283762       1.196238     |
+ |  p(2)           0.675676       0.242376       0.200618       1.150733     |
+ |  Corr(Phi(1),Phi(2))          -0.151929                                   |
+ |                         Estimates for Group 2                             |
+ |                                sexMale                                    |
+ |  Phi(1)         0.700000       0.204369       0.299437       1.100563     |
+ |  p(2)           0.714286       0.222627       0.277937       1.150634     |
+ |  Corr(Phi(1),Phi(2))          -0.144205                                   |
+ |                         Estimates for Pooled Groups                       |
+ |  Phi(2)         0.434671       0.068829       0.299766       0.569576     |
+ |  Phi(3)         0.478170       0.059709       0.361141       0.595200     |
+ |  Phi(4)         0.626118       0.059266       0.509957       0.742278     |
+ |  Phi(5)         0.598533       0.056052       0.488672       0.708395     |
+ |  p(3)           0.923077       0.072878       0.780236       1.065917     |
+ |  p(4)           0.913043       0.058176       0.799019       1.027068     |
+ |  p(5)           0.900789       0.053833       0.795277       1.006302     |
+ |  p(6)           0.932414       0.045803       0.842641       1.022187     |
+ |  Phi(6)p(7)     0.530612       0.050413       0.431803       0.629421     |
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  047
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+ |  Corr(Phi(2),Phi(3))          -0.058189                                   |
+ |  Corr(Phi(3),Phi(4))          -0.061308                                   |
+ |  Corr(Phi(4),Phi(5))          -0.092270                                   |
+ |                                                                           |
+ |                Correlation and Ratio of Survivals between Groups          |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |  S(1,2,Phi(1))  1.057143       0.448336       0.178405       1.935881     |
+ |  Corr(1,2,Phi(1))              0.023543                                   |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+               TEST 1.T2: Test of p(2) equal across groups, 
+               assuming higher order parameters are equal across groups.
+
+                              +------+------+
+                             O|   5  |   1  |   6
+                             E|   5.1|   0.9|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|   6  |   1  |   7
+                             E|   5.9|   1.1|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 11      2     13
+                     Chi-square=0.0141 (df=1) P=0.9056
+                       Fisher's Exact Test P=1.0000
+
+ * *  WARNING  * *   One or more expected values were < 2.0. 
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  048
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+ +---------------------------------------------------------------------------+
+ |                                                                           |
+ |          Maximum Likelihood Estimates under Model H1Phi                   |
+ |                                                                           |
+ |          Akaike's Information Criterion = 680.9439                        |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |                         Estimates for Group 1                             |
+ |                               sexFemale                                   |
+ |  Phi(1)         0.729231       0.208956       0.319677       1.138785     |
+ |  Corr(Phi(1),Phi(2))          -0.156228                                   |
+ |                         Estimates for Group 2                             |
+ |                                sexMale                                    |
+ |  Phi(1)         0.708974       0.194114       0.328511       1.089438     |
+ |  Corr(Phi(1),Phi(2))          -0.163502                                   |
+ |                         Estimates for Pooled Groups                       |
+ |  Phi(2)         0.434671       0.068829       0.299766       0.569576     |
+ |  Phi(3)         0.478170       0.059709       0.361141       0.595200     |
+ |  Phi(4)         0.626118       0.059266       0.509957       0.742278     |
+ |  Phi(5)         0.598533       0.056052       0.488672       0.708395     |
+ |  p(2)           0.696203       0.165764       0.371306       1.021100     |
+ |  p(3)           0.923077       0.072878       0.780236       1.065917     |
+ |  p(4)           0.913043       0.058176       0.799019       1.027068     |
+ |  p(5)           0.900789       0.053833       0.795277       1.006302     |
+ |  p(6)           0.932414       0.045803       0.842641       1.022187     |
+ |  Phi(6)p(7)     0.530612       0.050413       0.431803       0.629421     |
+ |  Corr(Phi(2),Phi(3))          -0.058189                                   |
+ |  Corr(Phi(3),Phi(4))          -0.061308                                   |
+ |  Corr(Phi(4),Phi(5))          -0.092270                                   |
+ |                                                                           |
+ |                Correlation and Ratio of Survivals between Groups          |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |  S(1,2,Phi(1))  1.028571       0.365383       0.312422       1.744721     |
+ |  Corr(1,2,Phi(1))              0.196807                                   |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  049
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+               TEST 1.R1: Test of Phi(1) equal across groups, 
+               assuming higher order parameters are equal across groups.
+
+                              +------+------+
+                             O|   6  |   4  |  10
+                             E|   5.9|   4.1|
+                             C|   0.0|   0.0|
+                              +------+------+
+                             O|   7  |   5  |  12
+                             E|   7.1|   4.9|
+                             C|   0.0|   0.0|
+                              +------+------+
+                                 13      9     22
+                     Chi-square=0.0063 (df=1) P=0.9369
+                       Fisher's Exact Test P=1.0000
+
+ +---------------------------------------------------------------------------+
+ |                                                                           |
+ |          Maximum Likelihood Estimates under Model H0                      |
+ |                                                                           |
+ |          Akaike's Information Criterion = 678.9502                        |
+ |                                                                           |
+ |                                               95% Confidence Intervals    |
+ |  Parameter      Estimate     Standard Error     Lower          Upper      |
+ |  ---------    -------------- -------------- -------------- -------------- |
+ |                         Estimates for Pooled Groups                       |
+ |  Phi(1)         0.718182       0.155547       0.413310       1.023054     |
+ |  Phi(2)         0.434671       0.068829       0.299766       0.569576     |
+ |  Phi(3)         0.478170       0.059709       0.361141       0.595200     |
+ |  Phi(4)         0.626118       0.059266       0.509957       0.742278     |
+ |  Phi(5)         0.598533       0.056052       0.488672       0.708395     |
+ |  p(2)           0.696203       0.165764       0.371306       1.021100     |
+ |  p(3)           0.923077       0.072878       0.780236       1.065917     |
+ |  p(4)           0.913043       0.058176       0.799019       1.027068     |
+ |  p(5)           0.900789       0.053833       0.795277       1.006302     |
+ |  p(6)           0.932414       0.045803       0.842641       1.022187     |
+ |  Phi(6)p(7)     0.530612       0.050413       0.431803       0.629421     |
+ |  Corr(Phi(1),Phi(2))          -0.206691                                   |
+ |  Corr(Phi(2),Phi(3))          -0.058189                                   |
+ |  Corr(Phi(3),Phi(4))          -0.061308                                   |
+ |  Corr(Phi(4),Phi(5))          -0.092270                                   |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  050
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+               TEST 1: Overall test of H0 vs. H6Phi  
+               Chi-square=1.2201 (df=11) P=0.9999
+               TEST 1 is an omnibus  test for a treatment  effect(s),
+               i.e., significant differences between groups.  For the
+               Complete Capture History protocol and Scheme A Partial
+               Capture History protocol, TEST 1 is an overall test of
+               equality  of all  survival and  capture  probabilities
+               among groups.
+ 
+ 
+                 Summary of TEST 1 (Between Groups Test) Results
+ 
+              Component  Chi-square   df   P-level  Sufficient Data
+              ---------  ----------  ----  -------  ---------------
+              1.R6          0.9885     1    0.3201       Yes
+              1.T6          0.0000     1    1.0000       No
+              1.R5          0.1801     1    0.6712       Yes
+              1.T5          0.0000     1    1.0000       No
+              1.R4          0.0000     1    1.0000       Yes
+              1.T4          0.0000     1    1.0000       No
+              1.R3          0.0515     1    0.8204       Yes
+              1.T3          0.0000     1    1.0000       No
+              1.R2          0.0000     1    1.0000       Yes
+              1.T2          0.0000     1    1.0000       No
+              1.R1          0.0000     1    1.0000       Yes
+              TEST 1        1.2201    11    0.9999
+ 
+ 
+                     Summary of Akaike's Information Criterion
+ 
+              Model   No. Parameters  Log-Likelihood         AIC
+              -----   --------------  --------------   --------------
+              H6Phi           22          -326.97554        697.95108
+              H6p             21          -327.50155        697.00310
+              H5Phi           20          -327.50298        695.00596
+              H5p             19          -327.61181        693.22362
+              H4Phi           18          -327.75234        691.50467
+              H4p             17          -327.76901        689.53802
+              H3Phi           16          -327.76978        687.53957
+              H3p             15          -327.85794        685.71588
+              H2Phi           14          -328.46108        684.92215
+              H2p             13          -328.46495        682.92991
+              H1Phi           12          -328.47197        680.94394
+              H0              11          -328.47511        678.95021
+
+  Program RELEASE - Survival Rate Estimation with Capture-Recapture Data
+   Version 3.0(Win 95) Sep 1997         25-Mar-2020 13:53:07    Page  051
+    Release-gof                                                                
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+
+     Time in seconds for last procedure was 0.05
+
+
+  INPUT --- proc stop;
+
+     Time in minutes for this job was 0.00
+
+
+          E X E C U T I O N   S U C C E S S F U L 
