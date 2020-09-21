@@ -208,6 +208,7 @@ exp(confint(model)[1,2] + confint(model)[2,2]) # Male upper CI
 length(subset(hr, hr$ReproSex=="M")$Distance_m)
 
 
+
 # Compare home-range sizes by sex using non-parametrix Wilcoxon tests
 res = wilcox.test(subset(hr, hr$ReproSex=="F")$Distance_m, subset(hr, hr$ReproSex=="M")$Distance_m, alternative="less")
 res
